@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emetco — Concept 07: The Requisition</title>
+<meta name="description" content="Emetco supplies valves, pumps, instrumentation, automation, cables and explosion-proof equipment from international brands to plants in Egypt and the region.">
+<link rel="icon" href="../../assets/logo/favicon-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#0B4557; --teal-deep:#06303D; --teal-ink:#0A2A34; --teal-line:#2E6577; --teal-soft:#BFD3D9; --teal-mist:#E6EEF0;
+  --red:#AD1E24; --red-deep:#8A161B;
+  --paper:#F6F8F8; --white:#FFFFFF; --ink:#0F1E23; --ink-2:#3E5560; --rule:#CCD9DD;
+  --wide:"wdth" 118; --cond:"wdth" 80;
+  --gut:clamp(20px,4vw,56px);
+  --max:1320px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scrollbar-color:var(--teal) var(--teal-mist)}
+body{font-family:"Archivo",system-ui,sans-serif;font-size:17px;line-height:1.55;color:var(--ink);background:var(--paper);caret-color:var(--red);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--teal);color:#fff}
+img{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.num{font-variant-numeric:tabular-nums lining-nums}
+svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:.6em;font:inherit;font-weight:650;font-variation-settings:"wdth" 108;font-size:15px;letter-spacing:.01em;padding:14px 22px;border:1.5px solid transparent;border-radius:2px;cursor:pointer;text-decoration:none;transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-deep)}
+.btn-line{border-color:currentColor;background:transparent}
+.btn-line:hover{background:rgba(255,255,255,.1)}
+.btn-ink{background:var(--teal);color:#fff}
+.btn-ink:hover{background:var(--teal-deep)}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:0;z-index:20;background:rgba(246,248,248,.96);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;gap:32px;height:76px}
+.top .logo img{height:44px;width:auto}
+.nav{display:flex;gap:28px;margin-left:auto;font-size:15px;font-weight:550}
+.nav a{text-decoration:none;color:var(--ink-2);padding:6px 0;border-bottom:1.5px solid transparent;transition:color .2s,border-color .2s}
+.nav a:hover,.nav a[aria-current]{color:var(--teal);border-color:var(--teal)}
+.rfq-chip{display:inline-flex;align-items:center;gap:10px}
+.rfq-chip .count{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 6px;border-radius:11px;background:#fff;color:var(--red);font-size:12px;font-weight:750}
+.menu-btn{display:none;background:none;border:0;color:var(--teal);cursor:pointer;padding:8px}
+
+/* ---------- hero: the drawing sheet ---------- */
+.sheet{background:var(--teal);color:#fff;position:relative}
+.sheet-frame{position:relative;max-width:var(--max);margin:0 auto;padding:28px var(--gut) 40px}
+.border{position:relative;border:1.5px solid rgba(255,255,255,.55);display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:minmax(200px,1fr) auto;min-height:min(calc(100vh - 76px - 68px),820px)}
+.zones{position:absolute;inset:-22px 0 auto 0;display:flex;justify-content:space-around;font-size:12px;font-weight:600;color:#D4E3E7;letter-spacing:.12em;pointer-events:none}
+.zones.side{inset:0 auto 0 -22px;flex-direction:column;justify-content:space-around;width:22px;text-align:center}
+.sheet .lede{grid-column:1;grid-row:1/3;padding:clamp(32px,3.6vw,56px) clamp(24px,4vw,60px);display:flex;flex-direction:column;justify-content:center;border-right:1px solid rgba(255,255,255,.28)}
+.lede h1{font-variation-settings:var(--wide);font-weight:780;font-size:clamp(38px,4.1vw,60px);line-height:1.02;letter-spacing:-.025em;max-width:13.5ch;text-wrap:balance}
+.lede h1 em{font-style:normal;color:#fff;background:linear-gradient(transparent 62%,var(--red) 62%,var(--red) 92%,transparent 92%)}
+.lede p{margin-top:24px;font-size:clamp(17px,1.3vw,19px);color:#D4E3E7;max-width:52ch}
+.lede .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.facts{display:flex;flex-wrap:wrap;gap:0;margin-top:40px;border-top:1px solid rgba(255,255,255,.28)}
+.facts div{padding:16px 24px 0 0;margin-right:24px;border-right:1px solid rgba(255,255,255,.2)}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font-variation-settings:var(--wide);font-size:26px;font-weight:760;line-height:1.1}
+.facts span{font-size:13.5px;color:var(--teal-soft)}
+
+.detail{grid-column:2;grid-row:1;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.28);min-height:220px}
+.detail img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.05)}
+.detail figcaption{position:absolute;left:0;bottom:0;background:var(--teal);font-size:12px;letter-spacing:.1em;padding:7px 12px;color:var(--teal-soft);border-top:1px solid rgba(255,255,255,.4);border-right:1px solid rgba(255,255,255,.4)}
+.detail .bubble{position:absolute;right:18px;top:18px;width:58px;height:58px;border:1.5px solid #fff;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700;line-height:1.1;text-align:center;background:rgba(6,48,61,.55)}
+.detail .bubble i{display:block;width:100%;border-top:1.5px solid #fff;margin:2px 0}
+
+/* title block = live RFQ */
+.tblock{grid-column:2;grid-row:2;background:var(--white);color:var(--ink);display:flex;flex-direction:column}
+.tb-head{display:grid;grid-template-columns:1fr auto;border-bottom:1.5px solid var(--ink)}
+.tb-head h2{font-variation-settings:var(--wide);font-size:20px;font-weight:760;padding:14px 18px;letter-spacing:-.01em}
+.tb-head .doc{font-size:12px;padding:10px 16px;border-left:1px solid var(--rule);color:var(--ink-2);line-height:1.4;text-align:right}
+.tb-meta{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--rule);font-size:12px}
+.tb-meta div{padding:8px 14px;border-right:1px solid var(--rule)}
+.tb-meta div:last-child{border-right:0}
+.tb-meta span{display:block;color:var(--ink-2);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.tb-meta b{font-weight:650}
+.lines{list-style:none;flex:1;min-height:72px;max-height:150px;overflow:auto;font-size:14px}
+.lines li{display:grid;grid-template-columns:34px 1fr 54px 44px;align-items:center;border-bottom:1px solid var(--rule);animation:lineIn .7s var(--ease)}
+.lines li>*{padding:8px 10px}
+.lines .n{color:var(--ink-2);border-right:1px solid var(--rule);text-align:center}
+.lines .q{border-left:1px solid var(--rule);text-align:right}
+.lines .x{background:none;border:0;cursor:pointer;color:var(--ink-2);display:grid;place-items:center;min-height:44px}
+.lines .x:hover{color:var(--red)}
+.lines .empty{display:block;padding:16px 18px;color:var(--ink-2);font-size:14px;animation:none}
+@keyframes lineIn{from{background:#FBE9EA}to{background:#fff}}
+.add{display:grid;grid-template-columns:1fr 70px auto;border-top:1px solid var(--rule)}
+.add input{font:inherit;font-size:14px;border:0;border-right:1px solid var(--rule);padding:12px 14px;background:var(--paper);color:var(--ink);min-width:0}
+.add input::placeholder{color:#5F747C}
+.add input:focus{outline:2px solid var(--teal);outline-offset:-2px}
+.add button{font:inherit;font-weight:650;font-size:14px;border:0;background:var(--teal);color:#fff;padding:0 16px;cursor:pointer;display:flex;align-items:center;gap:6px}
+.add button:hover{background:var(--teal-deep)}
+.send{display:grid;grid-template-columns:1fr 1fr}
+.send a{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 10px;font-weight:650;font-size:14.5px;text-decoration:none;color:#fff;background:var(--red);transition:background .2s}
+.send a:hover{background:var(--red-deep)}
+.send a+a{background:var(--teal-ink)}
+.send a+a:hover{background:#000}
+
+/* signature motion: the sheet border draws itself once */
+@media (prefers-reduced-motion:no-preference){
+  .lede h1 em{background-repeat:no-repeat;background-size:100% 100%;animation:mark 1.1s .35s var(--ease) backwards}
+  @keyframes mark{from{background-size:0% 100%}}
+}
+
+/* ---------- sections ---------- */
+section{padding:clamp(72px,9vw,128px) 0}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end;margin-bottom:48px}
+.sec-head h2{font-variation-settings:var(--wide);font-weight:770;font-size:clamp(30px,3.4vw,48px);line-height:1.05;letter-spacing:-.022em;max-width:18ch;text-wrap:balance}
+.sec-head p{color:var(--ink-2);max-width:56ch}
+
+/* product schedule */
+.schedule{border-top:2px solid var(--ink);background:var(--white)}
+.row{display:grid;grid-template-columns:96px minmax(0,1.05fr) minmax(0,1.2fr) 168px;border-bottom:1px solid var(--rule);align-items:stretch;transition:background .25s}
+.row:hover{background:#FBFCFC}
+.row .tag{border-right:1px solid var(--rule);display:grid;place-items:center;padding:18px 0}
+.tagbub{width:62px;height:62px;border:1.5px solid var(--teal);border-radius:50%;display:grid;place-items:center;text-align:center;font-weight:750;font-size:15px;color:var(--teal);line-height:1}
+.tagbub small{display:block;font-size:10px;font-weight:600;border-top:1.5px solid var(--teal);margin-top:4px;padding-top:4px;width:44px;color:var(--ink-2)}
+.row .what{padding:24px 28px}
+.row h3{font-variation-settings:"wdth" 112;font-size:21px;font-weight:720;line-height:1.2;letter-spacing:-.01em}
+.row .what p{margin-top:8px;font-size:15px;color:var(--ink-2);max-width:58ch}
+.row .pics{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid var(--rule)}
+.row .pics img{width:100%;height:150px;object-fit:contain;padding:14px;mix-blend-mode:multiply;border-right:1px solid var(--rule)}
+.row .act{display:grid;place-items:center;padding:16px}
+.addrow{font:inherit;font-size:14px;font-weight:650;background:none;border:1.5px solid var(--teal);color:var(--teal);padding:10px 14px;min-height:44px;border-radius:2px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s var(--ease);white-space:nowrap}
+.addrow:hover{background:var(--teal);color:#fff}
+.addrow[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.also{display:flex;flex-wrap:wrap;gap:8px 28px;padding:20px 28px 20px 124px;font-size:14.5px;color:var(--ink-2);border-bottom:2px solid var(--ink);background:var(--white)}
+.also b{color:var(--ink);font-weight:650}
+
+/* industries */
+.ind{background:var(--teal-deep);color:#fff}
+.ind .sec-head p{color:#C3D6DB}
+.views{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.25);border:1px solid rgba(255,255,255,.25)}
+.views figure{position:relative;background:var(--teal-deep)}
+.views img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(.8)}
+.views figcaption{padding:14px 16px;font-variation-settings:"wdth" 110;font-weight:680;font-size:18px}
+.ind-list{display:flex;flex-wrap:wrap;margin-top:36px;border-top:1px solid rgba(255,255,255,.25)}
+.ind-list li{list-style:none;flex:1 1 25%;padding:16px 16px 16px 0;border-bottom:1px solid rgba(255,255,255,.25);font-size:17px;font-weight:550;display:flex;gap:12px;align-items:center}
+.ind-list li::before{content:"";width:10px;height:10px;border:1.5px solid var(--teal-soft);border-radius:50%;flex:none}
+
+/* about / spec */
+.spec-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(32px,5vw,80px);align-items:start}
+.spec-grid .copy p{font-size:18px;max-width:62ch}
+.spec-grid .copy p+p{margin-top:18px;color:var(--ink-2);font-size:17px}
+.spec-grid .copy h2{font-variation-settings:var(--wide);font-weight:770;font-size:clamp(30px,3.4vw,48px);line-height:1.05;letter-spacing:-.022em;margin-bottom:28px;max-width:16ch}
+.vision{margin-top:40px;padding:28px 0 0;border-top:2px solid var(--ink)}
+.vision blockquote{font-variation-settings:"wdth" 112;font-size:clamp(22px,2vw,28px);font-weight:650;line-height:1.25;letter-spacing:-.012em;max-width:30ch}
+.vision cite{display:block;margin-top:10px;font-style:normal;font-size:14px;color:var(--ink-2)}
+.notes{background:var(--white);border:1.5px solid var(--ink)}
+.notes h3{font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:12px 18px;border-bottom:1.5px solid var(--ink);font-weight:700}
+.notes ol{list-style:none;counter-reset:n}
+.notes li{counter-increment:n;display:grid;grid-template-columns:44px 1fr;border-bottom:1px solid var(--rule);font-size:15.5px}
+.notes li:last-child{border-bottom:0}
+.notes li::before{content:counter(n);border-right:1px solid var(--rule);display:grid;place-items:center;font-weight:700;color:var(--teal)}
+.notes li div{padding:14px 18px}
+.notes li b{display:block;font-weight:680}
+.notes li span{color:var(--ink-2);font-size:14.5px}
+.notes .ph{background:repeating-linear-gradient(-45deg,#fff,#fff 6px,#F4F6F6 6px,#F4F6F6 12px)}
+.ph-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--red);border:1px solid var(--red);padding:1px 6px;margin-left:6px;vertical-align:2px}
+.split-photo{margin-top:28px;position:relative}
+.split-photo img{width:100%;aspect-ratio:16/10;object-fit:cover}
+
+/* brands: approved vendor list */
+.avl{background:var(--teal-mist)}
+.avl-table{display:grid;grid-template-columns:repeat(6,1fr);border-top:2px solid var(--ink);border-left:1px solid var(--rule);background:var(--white)}
+.avl-table div{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:22px 16px;min-height:86px;display:flex;flex-direction:column;justify-content:center;font-variation-settings:"wdth" 108;font-weight:720;font-size:18px;letter-spacing:-.01em;color:var(--teal-ink)}
+.avl-table div small{font-weight:500;font-size:12.5px;color:var(--ink-2);font-variation-settings:"wdth" 100;letter-spacing:0;margin-top:2px}
+.avl-note{grid-column:span 3;align-self:center;padding:16px;font-size:13.5px;color:var(--ink-2)}
+.avl-table .avl-note{border-bottom:1px solid var(--rule);border-right:1px solid var(--rule);height:100%;display:flex;align-items:center}
+
+/* issue for quotation band */
+.issue{background:var(--red);color:#fff;padding:clamp(56px,7vw,96px) 0}
+.issue .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:center}
+.issue h2{font-variation-settings:var(--wide);font-weight:780;font-size:clamp(32px,3.8vw,54px);line-height:1.03;letter-spacing:-.025em;max-width:15ch}
+.issue p{margin-top:18px;color:#FBE3E4;max-width:48ch}
+.channels{display:grid;gap:1px;background:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.35)}
+.channels a{display:grid;grid-template-columns:28px 1fr auto;gap:14px;align-items:center;background:var(--red);padding:18px 22px;text-decoration:none;transition:background .2s}
+.channels a:hover{background:var(--red-deep)}
+.channels b{display:block;font-size:19px;font-weight:700;font-variation-settings:"wdth" 108}
+.channels span{font-size:13.5px;color:#F7D3D5}
+.channels svg.i{width:22px;height:22px}
+
+/* footer title block */
+footer{background:var(--teal-ink);color:#D7E4E8;padding:64px 0 28px;font-size:15px}
+.fgrid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.1fr;border:1px solid rgba(255,255,255,.25)}
+.fgrid>div{padding:24px;border-right:1px solid rgba(255,255,255,.25)}
+.fgrid>div:last-child{border-right:0}
+.fgrid h3{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-soft);font-weight:650;margin-bottom:12px}
+.fgrid a{text-decoration:none}.fgrid a:hover{text-decoration:underline}
+.fgrid ul{list-style:none;display:grid;gap:6px}
+.flogo img{height:52px;width:auto;margin-bottom:16px}
+.ar{font-family:"Noto Kufi Arabic","Segoe UI",Tahoma,sans-serif;direction:rtl;text-align:left;unicode-bidi:isolate;color:#fff;font-size:15px}
+.map{height:150px;border:1px dashed rgba(255,255,255,.4);display:grid;place-items:center;text-align:center;font-size:13px;color:var(--teal-soft);background:repeating-linear-gradient(0deg,transparent,transparent 23px,rgba(255,255,255,.06) 23px,rgba(255,255,255,.06) 24px),repeating-linear-gradient(90deg,transparent,transparent 23px,rgba(255,255,255,.06) 23px,rgba(255,255,255,.06) 24px)}
+.fbar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:20px;font-size:12.5px;color:#B5CBD2}
+
+/* sticky mobile RFQ bar */
+.mbar{display:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:1180px){
+  .nav{gap:20px}
+  .row{grid-template-columns:84px minmax(0,1fr) minmax(0,1fr) 150px}
+  .avl-table{grid-template-columns:repeat(4,1fr)}
+  .avl-note{grid-column:span 1}
+}
+@media (max-width:980px){
+  .nav,.top .rfq-chip{display:none}
+  .menu-btn{display:block;margin-left:auto}
+  .top.open .nav{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;gap:0;background:var(--paper);border-bottom:1px solid var(--rule);padding:8px var(--gut) 16px}
+  .top.open .nav a{padding:12px 0;border-bottom:1px solid var(--rule)}
+  .border{grid-template-columns:minmax(0,1fr);grid-template-rows:none;min-height:0}
+  .sheet .lede{grid-row:auto;border-right:0;border-bottom:1px solid rgba(255,255,255,.28)}
+  .detail{grid-column:1;grid-row:auto;aspect-ratio:16/9;width:100%;min-height:0}
+  .tblock{grid-column:1;grid-row:auto}
+  .zones{display:none}
+  .sec-head,.spec-grid,.issue .wrap{grid-template-columns:1fr}
+  .row{grid-template-columns:72px minmax(0,1fr) 140px}
+  .row .pics{grid-column:2/4;grid-row:2;border-left:0;border-top:1px solid var(--rule)}
+  .row .tag{grid-row:1/3}
+  .also{padding-left:28px}
+  .views{grid-template-columns:repeat(2,1fr)}
+  .ind-list li{flex-basis:50%}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .fgrid>div:nth-child(2){border-right:0}
+  .fgrid>div:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.25)}
+}
+@media (max-width:640px){
+  body{font-size:16px;padding-bottom:64px}
+  .top .wrap{height:64px}
+  .top .logo img{height:36px}
+  .top.open .nav{top:64px}
+  .sheet-frame{padding:16px 12px 24px}
+  .sheet .lede{padding:32px 20px}
+  .lede h1{font-size:34px;font-variation-settings:"wdth" 104}
+  .lede .acts .btn{flex:1 1 100%;justify-content:center}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr)}
+  .facts div{padding:14px 10px 0 0;margin-right:10px}
+  .facts span{font-size:12.5px;display:block;line-height:1.3}
+  .facts b{font-size:21px}
+  .tb-meta{grid-template-columns:1fr 1fr}
+  .tb-meta div:nth-child(3){display:none}
+  .tb-head .doc{display:none}
+  .add{grid-template-columns:1fr 58px}
+  .add button{grid-column:1/3;justify-content:center;padding:12px}
+  .send{grid-template-columns:1fr}
+  .row{grid-template-columns:64px minmax(0,1fr)}
+  .row .tag{grid-row:1/4;align-items:start;padding-top:22px}
+  .tagbub{width:48px;height:48px;font-size:13px}
+  .tagbub small{width:34px;font-size:9px}
+  .row .what{padding:20px 18px 12px}
+  .row h3{font-size:19px}
+  .row .pics{grid-column:2;grid-row:2}
+  .row .pics img{height:96px;padding:8px}
+  .row .act{grid-column:2;grid-row:3;justify-items:start;padding:12px 18px 20px}
+  .also{padding:18px}
+  .views figcaption{font-size:15px;padding:10px 12px}
+  .ind-list li{flex-basis:100%}
+  .avl-table{grid-template-columns:repeat(2,1fr)}
+  .avl-table div{font-size:16px;min-height:72px;padding:16px 14px}
+  .avl-note{grid-column:span 1}
+  .fgrid{grid-template-columns:1fr}
+  .fgrid>div{border-right:0!important;border-bottom:1px solid rgba(255,255,255,.25)}
+  .fgrid>div:last-child{border-bottom:0}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:30;box-shadow:0 -6px 18px rgba(6,48,61,.18)}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;height:56px;font-weight:650;text-decoration:none;color:#fff;background:var(--red)}
+  .mbar a+a{background:var(--teal-ink)}
+}
+</style>
+</head>
+<body>
+
+<!-- authored icon set, one stroke weight -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6l8.5 7 8.5-7"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 20l1.4-4.2A8 8 0 1119.6 9 8 8 0 018.2 18.6z"/><path d="M9 10.5c.5 2 2.2 3.6 4.5 4"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+</svg>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Emetco home"><img src="../../assets/logo/emetco-logo-color.png" alt="Emetco — Engineering Technology"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#top" aria-current="page">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#industries">Industries</a>
+      <a href="#brands">Brands</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-red rfq-chip" href="#rfq">Request a Quote <span class="count num" data-count>0</span></a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><svg class="i" style="width:26px;height:26px"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<main>
+<!-- HERO: the drawing sheet -->
+<div class="sheet draw">
+  <div class="sheet-frame">
+    <div class="border">
+      <div class="zones" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div>
+      <div class="zones side" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span></div>
+
+      <div class="lede">
+        <h1>One engineering desk for every line on your <em>requisition</em>.</h1>
+        <p>Emetco supplies valves, pumps, instrumentation, automation, cables and explosion-proof equipment from trusted international brands, backed by a local team of engineers.</p>
+        <div class="acts">
+          <a class="btn btn-red" href="#rfq">Request a Quote <svg class="i"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-line" href="#products">Our Products</a>
+        </div>
+        <div class="facts">
+          <div><b>100%</b><span>Egyptian company</span></div>
+          <div><b class="num">25+</b><span>years of experience</span></div>
+          <div><b class="num">8</b><span>product families</span></div>
+        </div>
+      </div>
+
+      <figure class="detail">
+        <img src="../../assets/photos/pressure-gauge-warm.jpg" alt="Pressure gauge on a process line" width="1024" height="683">
+        <div class="bubble" aria-hidden="true">PI<i></i>101</div>
+        <figcaption>DETAIL A — FIELD INSTRUMENTATION</figcaption>
+      </figure>
+
+      <div class="tblock" id="rfq" aria-labelledby="rfq-title">
+        <div class="tb-head">
+          <h2 id="rfq-title">Request for Quotation</h2>
+          <div class="doc">Draft<br>Sheet 1 of 1</div>
+        </div>
+        <div class="tb-meta">
+          <div><span>Supplier</span><b>Emetco, Cairo</b></div>
+          <div><span>Date</span><b class="num" data-date>—</b></div>
+          <div><span>Lines</span><b class="num" data-count>0</b></div>
+        </div>
+        <ul class="lines" data-lines aria-live="polite">
+          <li class="empty">No lines yet. Add a family below or type an item.</li>
+        </ul>
+        <form class="add" data-add>
+          <input id="item" name="item" aria-label="Item and specification" placeholder="Item, size, rating — e.g. 4&quot; gate valve, class 300" autocomplete="off">
+          <input name="qty" type="number" min="1" value="1" aria-label="Quantity" class="num">
+          <button type="submit"><svg class="i"><use href="#i-plus"/></svg>Add line</button>
+        </form>
+        <div class="send">
+          <a href="mailto:info@emetcoeg.com" data-mail><svg class="i"><use href="#i-mail"/></svg>Send by email</a>
+          <a href="https://wa.me/201099654547" data-wa target="_blank" rel="noopener"><svg class="i"><use href="#i-chat"/></svg>Send on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS: equipment schedule -->
+<section id="products">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Equipment schedule: eight product families, one supplier.</h2>
+      <p>Each family carries a tag you can add straight to your RFQ. Add the families you need, then tell us the size, rating and quantity.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="schedule" data-schedule>
+
+      <div class="row" data-tag="VA" data-name="Valves &amp; Actuators">
+        <div class="tag"><div class="tagbub">VA<small>01</small></div></div>
+        <div class="what"><h3>Valves &amp; Actuators</h3><p>Gate, globe, check, butterfly, ball, plug, knife gate and control valves. Pneumatic, electric and hydraulic actuators. Positioners, limit switches and solenoid valves.</p></div>
+        <div class="pics"><img src="../../assets/products/valves/valves-p03-037.jpg" alt="Gate valves" loading="lazy"><img src="../../assets/products/valves/valves-p05-119.jpg" alt="Butterfly valves with actuator" loading="lazy"><img src="../../assets/products/valves/valves-p06-152.jpg" alt="Plug valve cutaway" loading="lazy"></div>
+        <div class="act"><button class="addrow" aria-pressed="false"><svg class="i"><use href="#i-plus"/></svg>Add to RFQ</button></div>
+      </div>
+
+      <div class="row" data-tag="PM" data-name="Pumps &amp; Motors">
+        <div class="tag"><div class="tagbub">PM<small>02</small></div></div>
+        <div class="what"><h3>Pumps &amp; Motors</h3><p>Submersible, centrifugal, dosing and metering, chemical injection, diaphragm, screw and piston, boiler feed pumps. AC, DC and special motors. Star/delta, soft starters and VSDs.</p></div>
+        <div class="pics"><img src="../../assets/products/pumps/pumps-p07-205.jpg" alt="Centrifugal pump" loading="lazy"><img src="../../assets/products/pumps/pumps-p07-181.jpg" alt="Diaphragm and dosing pumps" loading="lazy"><img src="../../assets/products/pumps/pumps-p07-207.jpg" alt="Pump and motor set" loading="lazy"></div>
+        <div class="act"><button class="addrow" aria-pressed="false"><svg class="i"><use href="#i-plus"/></svg>Add to RFQ</button></div>
+      </div>
+
+      <div class="row" data-tag="IN" data-name="Instrumentation &amp; Analytical">
+        <div class="tag"><div class="tagbub">IN<small>03</small></div></div>
+        <div class="what"><h3>Instrumentation &amp; Analytical</h3><p>Flowmeters, pressure meters and temperature transmitters. Sensors, barriers, signal converters and interface relays. Measuring and calibration devices.</p></div>
+        <div class="pics"><img src="../../assets/products/instrumentation/instrumentation-p08-212.jpg" alt="Transmitter with display" loading="lazy"><img src="../../assets/products/instrumentation/instrumentation-p08-215.jpg" alt="Flow measurement instruments" loading="lazy"><img src="../../assets/products/instrumentation/instrumentation-p08-218.jpg" alt="Analytical instrument" loading="lazy"></div>
+        <div class="act"><button class="addrow" aria-pressed="false"><svg class="i"><use href="#i-plus"/></svg>Add to RFQ</button></div>
+      </div>
+
+      <div class="row" data-tag="AC" data-name="Automation &amp; Control">
+        <div class="tag"><div class="tagbub">AC<small>04</small></div></div>
+        <div class="what"><h3>Automation &amp; Control</h3><p>PLC, DCS and SCADA control cards, drives and turbine spare parts from ABB, Siemens, GE, Honeywell and Emerson.</p></div>
+        <div class="pics"><img src="../../assets/products/automation-control/automation-control-p09-245.jpg" alt="PLC modules" loading="lazy"><img src="../../assets/products/automation-control/automation-control-p10-253.jpg" alt="Pressure transmitters" loading="lazy"><img src="../../assets/products/automation-control/automation-control-p10-249.jpg" alt="Control valve with positioner" loading="lazy"></div>
+        <div class="act"><button class="addrow" aria-pressed="false"><svg class="i"><use href="#i-plus"/></svg>Add to RFQ</button></div>
+      </div>
+
+      <div class="row" data-tag="CB" data-name="Cables">
+        <div class="tag"><div class="tagbub">CB<small>05</small></div></div>
+        <div class="what"><h3>Cables</h3><p>Control, instrument and fire alarm cables. Marine, high-temperature and chemical-resistant cables.</p></div>
+        <div class="pics"><img src="../../assets/products/cables/cables-p13-285.jpg" alt="Power cable cross-sections" loading="lazy"><img src="../../assets/products/cables/cables-p13-297.jpg" alt="Multi-core instrument cables" loading="lazy"><img src="../../assets/products/cables/cables-p13-292.jpg" alt="Control cables" loading="lazy"></div>
+        <div class="act"><button class="addrow" aria-pressed="false"><svg class="i"><use href="#i-plus"/></svg>Add to RFQ</button></div>
+      </div>
+
+      <div class="row" data-tag="EX" data-name="Explosion-Proof &amp; Safety">
+        <div class="tag"><div class="tagbub">EX<small>06</small></div></div>
+        <div class="what"><h3>Explosion-Proof &amp; Safety</h3><p>Explosion-proof lighting and ATEX control panels (Eaton CEAG). Fire alarm and fire fighting systems.</p></div>
+        <div class="pics"><img src="../../assets/products/explosion-proof/explosion-proof-p14-304.jpg" alt="Explosion-proof control station" loading="lazy"><img src="../../assets/products/explosion-proof/explosion-proof-p14-311.jpg" alt="Explosion-proof light fitting" loading="lazy"><img src="../../assets/products/explosion-proof/explosion-proof-p14-315.jpg" alt="Explosion-proof plug and socket" loading="lazy"></div>
+        <div class="act"><button class="addrow" aria-pressed="false"><svg class="i"><use href="#i-plus"/></svg>Add to RFQ</button></div>
+      </div>
+
+      <div class="row" data-tag="BI" data-name="Burner Ignition &amp; Flame Systems">
+        <div class="tag"><div class="tagbub">BI<small>07</small></div></div>
+        <div class="what"><h3>Burner Ignition &amp; Flame Systems</h3><p>US-made and built to spec: igniters, flame scanners, oil and gas guns. OEM replacement parts for FPS, Chentronics, Coen, Peabody, B&amp;W, Forney, Alstom and GE.</p></div>
+        <div class="pics"><img src="../../assets/products/burner-ignition/burner-ignition-p12-281.jpg" alt="Flame scanners and controls" loading="lazy"><img src="../../assets/products/burner-ignition/burner-ignition-p12-278.jpg" alt="Igniter rods" loading="lazy"><img src="../../assets/products/burner-ignition/burner-ignition-p12-280.jpg" alt="Ignition control box" loading="lazy"></div>
+        <div class="act"><button class="addrow" aria-pressed="false"><svg class="i"><use href="#i-plus"/></svg>Add to RFQ</button></div>
+      </div>
+
+      <div class="row" data-tag="TF" data-name="Tank Fittings, Relief Valves &amp; Cathodic Protection">
+        <div class="tag"><div class="tagbub">TF<small>08</small></div></div>
+        <div class="what"><h3>Tank Fittings, Relief Valves &amp; Cathodic Protection</h3><p>Pressure/vacuum relief valves, flame arresters, gauge hatches and radar level gauges for storage tanks. Cathodic protection systems.</p></div>
+        <div class="pics"><img src="../../assets/products/tank-fittings-relief-valves/tank-fittings-relief-valves-p16-344.jpg" alt="Pressure/vacuum relief vent" loading="lazy"><img src="../../assets/products/tank-fittings-relief-valves/tank-fittings-relief-valves-p16-349.jpg" alt="Relief valves" loading="lazy"><img src="../../assets/products/cathodic-protection/cathodic-protection-p15-341.jpg" alt="Cathodic protection joint" loading="lazy"></div>
+        <div class="act"><button class="addrow" aria-pressed="false"><svg class="i"><use href="#i-plus"/></svg>Add to RFQ</button></div>
+      </div>
+    </div>
+    <p class="also"><b>Also supplied:</b> <span>Pipes and fittings</span><span>Expansion joints &amp; flexible hoses</span><span>Industrial ventilation</span><span>Demineralization &amp; ion-exchange materials</span></p>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="ind" id="industries">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Built for plants that run around the clock.</h2>
+      <p>We supply engineering products to industry, oil &amp; gas, petrochemicals, power, utilities and manufacturing.</p>
+    </div>
+    <div class="views">
+      <figure><img src="../../assets/photos/refinery-night.jpg" alt="Refinery lit at night" loading="lazy"><figcaption>Oil &amp; Gas</figcaption></figure>
+      <figure><img src="../../assets/photos/process-plant-teal.jpg" alt="Petrochemical process plant" loading="lazy"><figcaption>Petrochemicals</figcaption></figure>
+      <figure><img src="../../assets/photos/power-plant-night.jpg" alt="Power station at night" loading="lazy"><figcaption>Power Generation</figcaption></figure>
+      <figure><img src="../../assets/photos/offshore-platform.jpg" alt="Offshore platform at sea" loading="lazy"><figcaption>Marine &amp; Offshore</figcaption></figure>
+    </div>
+    <ul class="ind-list">
+      <li>Water &amp; wastewater</li><li>Utilities</li><li>Manufacturing</li><li>Food industry</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap spec-grid">
+    <div class="copy">
+      <h2>Engineers first. Suppliers second.</h2>
+      <p>Emetco is a 100% Egyptian company, founded by a group of engineers with 25 years of experience in electrical, mechanical and control equipment.</p>
+      <p>We are an engineering services, trading and contracting company in electrical and mechanical control systems, instrumentation and process. We deliver cost-effective solutions through a wide network of trusted international partners, backed by an experienced local team.</p>
+      <div class="vision">
+        <blockquote>“To be the best provider of electromechanical and electrical supply and maintenance services.”</blockquote>
+        <cite>Our vision</cite>
+      </div>
+    </div>
+    <div>
+      <div class="notes">
+        <h3>General notes</h3>
+        <ol>
+          <li><div><b>Products to international standards</b><span>For industry, oil &amp; gas, petrochemicals, power, utilities and manufacturing.</span></div></li>
+          <li><div><b>One local contact</b><span>An experienced local team between you and many international partners.</span></div></li>
+          <li><div><b>Cost-effective supply</b><span>We find better ways to supply engineering products and adapt fast to the market.</span></div></li>
+          <li class="ph"><div><b>Mission <span class="ph-tag">Placeholder</span></b><span>Mission statement to confirm with client.</span></div></li>
+          <li class="ph"><div><b>Values <span class="ph-tag">Placeholder</span></b><span>Company values to confirm with client.</span></div></li>
+        </ol>
+      </div>
+      <figure class="split-photo"><img src="../../assets/photos/technician-lab.jpg" alt="Technician testing equipment in a workshop" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="avl" id="brands">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Approved vendor list: the brands we supply.</h2>
+      <p>International brands listed in our company profile. Name the brand on your datasheet when you send your RFQ.</p>
+    </div>
+    <div class="avl-table">
+      <div>ABB</div><div>Siemens</div><div>Emerson<small>Fisher · Rosemount</small></div><div>Endress+Hauser</div><div>Schneider Electric</div><div>Rockwell<small>Allen-Bradley</small></div>
+      <div>Honeywell</div><div>GE</div><div>Eaton<small>CEAG</small></div><div>Flowserve</div><div>KSB</div><div>Crane</div>
+      <div>Grundfos</div><div>Goulds</div><div>Milton Roy</div><div>Rotork</div><div>Biffi</div><div>Bettis</div>
+      <div>Spirax Sarco</div><div>Masoneilan</div><div>Velan</div><div>Keystone</div><div>Asahi</div><div>Swissfluid</div>
+      <div>Richter</div><div>Vogt</div><div>Böhmer</div><p class="avl-note">Brand names are trademarks of their owners and are shown as text only.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RFQ BAND -->
+<section class="issue" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Issue your RFQ today. Get an engineer’s answer.</h2>
+      <p>Send your list with sizes, ratings and quantities. Call us, write to us, or message us on WhatsApp.</p>
+    </div>
+    <div class="channels">
+      <a href="https://wa.me/201099654547" target="_blank" rel="noopener"><svg class="i"><use href="#i-chat"/></svg><div><b class="num">+20 10 9965 4547</b><span>Mobile and WhatsApp</span></div><svg class="i"><use href="#i-arrow"/></svg></a>
+      <a href="tel:+20227049740"><svg class="i"><use href="#i-phone"/></svg><div><b class="num">+20 2 2704 9740</b><span>Tel / Fax</span></div><svg class="i"><use href="#i-arrow"/></svg></a>
+      <a href="mailto:info@emetcoeg.com"><svg class="i"><use href="#i-mail"/></svg><div><b>info@emetcoeg.com</b><span>Email your RFQ</span></div><svg class="i"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="flogo">
+        <img src="../../assets/logo/emetco-logo-white.png" alt="Emetco — Engineering Technology">
+        <p>Electromechanical Engineering &amp;&nbsp;Trading&nbsp;Co.</p>
+        <p class="ar" lang="ar" dir="rtl">إيمتكو — الكهروميكانيكية للهندسة والتجارة</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+201099654547" class="num">Mobile +20 10 9965 4547</a></li>
+          <li><a href="tel:+20227049740" class="num">Tel / Fax +20 2 2704 9740</a></li>
+          <li><a href="mailto:info@emetcoeg.com">info@emetcoeg.com</a></li>
+          <li><a href="#top">www.emetcoeg.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Site</h3>
+        <ul>
+          <li><a href="#about">About</a></li><li><a href="#products">Products</a></li><li><a href="#industries">Industries</a></li><li><a href="#brands">Brands</a></li><li><a href="#rfq">Request a Quote</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Address</h3>
+        <p style="margin-bottom:12px">30 Street 270, New Maadi, Cairo, Egypt</p>
+        <div class="map" role="img" aria-label="Map placeholder"><span><svg class="i" style="margin:0 auto 6px"><use href="#i-pin"/></svg>Map placeholder<br>(Google Map embed in final site)</span></div>
+      </div>
+    </div>
+    <div class="fbar"><span>© <span data-year>2026</span> Emetco. All rights reserved.</span><span class="num">Commercial register 116897 · Tax card 555-381-137</span></div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a href="#rfq"><svg class="i"><use href="#i-plus"/></svg>Request a Quote</a>
+  <a href="https://wa.me/201099654547" target="_blank" rel="noopener"><svg class="i"><use href="#i-chat"/></svg>WhatsApp</a>
+</div>
+
+<script>
+(function(){
+  var lines=[], list=document.querySelector('[data-lines]'), mail=document.querySelector('[data-mail]'), wa=document.querySelector('[data-wa]');
+  var d=new Date();
+  document.querySelector('[data-date]').textContent=d.toISOString().slice(0,10);
+    document.querySelector('[data-year]').textContent=d.getFullYear();
+
+  function body(){
+    if(!lines.length) return 'Hello Emetco,%0A%0APlease quote the following:%0A';
+    return encodeURIComponent('Hello Emetco,\n\nPlease quote the following:\n'+lines.map(function(l,i){return (i+1)+'. '+l.text+' — qty '+l.qty}).join('\n')+'\n\nThank you.');
+  }
+  function render(){
+    list.innerHTML='';
+    if(!lines.length){list.innerHTML='<li class="empty">No lines yet. Add a family below or type an item.</li>'}
+    lines.forEach(function(l,i){
+      var li=document.createElement('li');
+      li.innerHTML='<span class="n num">'+(i+1)+'</span><span></span><span class="q num">'+l.qty+'</span><button class="x" aria-label="Remove line '+(i+1)+'"><svg class="i"><use href="#i-x"/></svg></button>';
+      li.children[1].textContent=l.text;
+      li.querySelector('.x').onclick=function(){remove(i)};
+      list.appendChild(li);
+    });
+    document.querySelectorAll('[data-count]').forEach(function(n){n.textContent=lines.length});
+    mail.href='mailto:info@emetcoeg.com?subject='+encodeURIComponent('RFQ from emetcoeg.com')+'&body='+body();
+    wa.href='https://wa.me/201099654547?text='+body();
+    document.querySelectorAll('[data-schedule] .row').forEach(function(r){
+      var on=lines.some(function(l){return l.tag===r.dataset.tag});
+      var b=r.querySelector('.addrow');b.setAttribute('aria-pressed',on);
+      b.innerHTML=on?'<svg class="i"><use href="#i-check"/></svg>In your RFQ':'<svg class="i"><use href="#i-plus"/></svg>Add to RFQ';
+    });
+  }
+  function remove(i){lines.splice(i,1);render()}
+  document.querySelector('[data-add]').addEventListener('submit',function(e){
+    e.preventDefault();var t=this.item.value.trim(),q=Math.max(1,parseInt(this.qty.value,10)||1);
+    if(!t){this.item.focus();return}
+    lines.push({text:t,qty:q});this.item.value='';this.qty.value=1;render();
+  });
+  document.querySelectorAll('[data-schedule] .row').forEach(function(r){
+    r.querySelector('.addrow').addEventListener('click',function(){
+      var i=lines.findIndex(function(l){return l.tag===r.dataset.tag});
+      if(i>-1){remove(i);return}
+      lines.push({tag:r.dataset.tag,text:r.dataset.tag+' — '+r.dataset.name+' (please specify)',qty:1});render();
+    });
+  });
+  var top=document.querySelector('.top'),mb=document.querySelector('.menu-btn');
+  mb.addEventListener('click',function(){var o=top.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+  document.querySelectorAll('.nav a').forEach(function(a){a.addEventListener('click',function(){top.classList.remove('open');mb.setAttribute('aria-expanded',false)})});
+  render();
+})();
+</script>
+</body>
+</html>

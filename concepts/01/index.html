@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emetco — Concept 01: Quote First</title>
+<meta name="description" content="100% Egyptian supplier of valves, pumps, instrumentation, automation, cables and explosion-proof equipment from 40+ international brands. Request a quote today.">
+<link rel="icon" href="../../assets/logo/favicon-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#AD1E24; --red-dark:#8E171C; --teal:#0B4557; --teal-deep:#072F3C; --teal-soft:#E8F0F2;
+  --ink:#14232A; --body:#45545B; --line:#DCE3E6; --bg:#F5F7F8; --white:#fff; --wa:#177A41;
+  --radius:14px; --shadow:0 18px 50px -20px rgba(7,47,60,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{font-family:"Plus Jakarta Sans",system-ui,sans-serif;color:var(--body);background:var(--white);line-height:1.6;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{color:var(--ink);line-height:1.15;letter-spacing:-.02em}
+h2{font-size:clamp(28px,3.2vw,40px);font-weight:800}
+h3{font-size:18px;font-weight:700}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+.lead{font-size:18px;max-width:640px}
+.sec{padding:96px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:44px;flex-wrap:wrap}
+.sec-head p{max-width:520px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:inherit;font-weight:700;font-size:16px;padding:15px 26px;border-radius:10px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-dark)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:#12612F}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn-line{border-color:var(--teal);color:var(--teal)}
+.btn-line:hover{background:var(--teal);color:#fff}
+.btn svg{width:20px;height:20px;flex:none}
+:focus-visible{outline:3px solid #F2B705;outline-offset:2px}
+
+/* header */
+.top{background:var(--teal-deep);color:#D5E3E8;font-size:14px}
+.top .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:8px;padding-bottom:8px}
+.top a{text-decoration:none;font-weight:600;color:#fff;white-space:nowrap}
+.top .links{display:flex;gap:24px}
+header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
+.logo img{height:42px;width:auto}
+nav.main{display:flex;gap:28px}
+nav.main a{text-decoration:none;font-weight:600;color:var(--ink);font-size:15px}
+nav.main a:hover{color:var(--red)}
+.head-cta{display:flex;align-items:center;gap:18px}
+.head-phone{display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;color:var(--teal)}
+.head-phone svg{width:18px;height:18px}
+.head-cta .btn{padding:12px 20px;font-size:15px}
+
+/* hero */
+.hero{position:relative;color:#fff;background:var(--teal-deep)}
+.hero-bg{position:absolute;inset:0;background:url(../../assets/photos/gas-plant.jpg) center/cover no-repeat}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,47,60,.96) 0%,rgba(7,47,60,.88) 45%,rgba(7,47,60,.6) 100%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding-top:56px;padding-bottom:64px}
+.hero h1{color:#fff;font-size:clamp(36px,4.2vw,58px);font-weight:800;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:#FF9C9F}
+.hero .lead{color:#D9E6EA;margin-bottom:28px}
+.badge-row{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:7px 14px;border-radius:99px;font-size:14px;font-weight:600;margin-bottom:22px}
+.badge-row .dot{width:8px;height:8px;border-radius:50%;background:#5BD08A}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+.ticks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;font-weight:600;font-size:15px;color:#fff}
+.ticks li{display:flex;gap:10px;align-items:center}
+.ticks svg{width:20px;height:20px;flex:none;color:#5BD08A}
+
+/* quote form */
+.qform{background:#fff;color:var(--body);border-radius:18px;padding:28px;box-shadow:var(--shadow)}
+.qform h2{font-size:24px;margin-bottom:4px}
+.qform .sub{font-size:14px;margin-bottom:18px}
+.qform label.lbl{display:block;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;border:0}
+.chips legend{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-block;padding:7px 12px;border:1.5px solid var(--line);border-radius:99px;font-size:13px;font-weight:600;color:var(--ink);cursor:pointer;transition:all .15s}
+.chip input:checked+span{background:var(--teal);border-color:var(--teal);color:#fff}
+.chip input:focus-visible+span{outline:3px solid #F2B705;outline-offset:2px}
+.chip span:hover{border-color:var(--teal)}
+.field{margin-bottom:12px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.qform input[type=text],.qform input[type=tel],.qform input[type=email],.qform textarea{width:100%;font:inherit;font-size:15px;color:var(--ink);padding:11px 13px;border:1.5px solid var(--line);border-radius:9px;background:#fff}
+.qform input::placeholder,.qform textarea::placeholder{color:#6B7A80}
+.qform textarea{resize:vertical;min-height:76px}
+.qform input:focus,.qform textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(11,69,87,.15)}
+.qform .btn{width:100%;margin-top:6px}
+.form-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px;font-size:13px}
+.form-foot a{color:var(--wa);font-weight:700;text-decoration:none}
+.form-ok{display:none;text-align:center;padding:40px 10px}
+.form-ok h3{font-size:22px;margin-bottom:8px}
+.qform.sent form{display:none}
+.qform.sent .form-ok{display:block}
+
+/* trust bar */
+.trust{background:#fff;border-bottom:1px solid var(--line)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:30px 24px;border-right:1px solid var(--line);display:flex;gap:16px;align-items:center}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-size:34px;font-weight:800;color:var(--teal);line-height:1}
+.stat span{font-size:14px;font-weight:600;color:var(--body)}
+.stat i{font-style:normal;font-size:12px;color:#56656B;display:block}
+
+/* brands strip */
+.brands{background:var(--bg);padding:34px 0}
+.brands .wrap{display:flex;align-items:center;gap:32px}
+.brands p{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);flex:none;max-width:150px;line-height:1.4}
+.brand-list{display:flex;flex-wrap:wrap;gap:12px 34px;align-items:center}
+.brand-list span{font-size:20px;font-weight:800;color:#5E6E75;letter-spacing:-.01em;white-space:nowrap}
+
+/* products */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,border-color .2s,transform .2s}
+.cat:hover{box-shadow:var(--shadow);border-color:transparent;transform:translateY(-3px)}
+.cat .pic{height:170px;display:grid;place-items:center;padding:18px;background:#fff;border-bottom:1px solid var(--line)}
+.cat .pic img{max-height:134px;width:auto;object-fit:contain}
+.cat .body{padding:20px;display:flex;flex-direction:column;flex:1}
+.cat h3{margin-bottom:6px}
+.cat p{font-size:14px;margin-bottom:16px;flex:1}
+.cat a.q{font-weight:700;color:var(--red);text-decoration:none;font-size:15px;display:inline-flex;gap:6px;align-items:center}
+.cat a.q:hover{text-decoration:underline}
+.cats-foot{margin-top:36px;display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+
+/* how it works */
+.how{background:var(--teal-soft)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s}
+.step{background:#fff;border-radius:var(--radius);padding:32px;position:relative}
+.step .n{width:48px;height:48px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;font-size:20px;display:grid;place-items:center;margin-bottom:20px}
+.step h3{font-size:20px;margin-bottom:8px}
+.how .cta-line{margin-top:40px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+
+/* why */
+.why .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.why-photo{position:relative}
+.why-photo img{border-radius:18px;width:100%;aspect-ratio:4/4.4;object-fit:cover}
+.why-photo .card{position:absolute;left:-24px;bottom:32px;background:#fff;border-radius:14px;padding:18px 22px;box-shadow:var(--shadow);max-width:270px}
+.why-photo .card b{display:block;color:var(--ink);font-size:16px}
+.why-photo .card span{font-size:14px}
+.benefits{display:grid;gap:22px;margin-top:32px}
+.benefit{display:flex;gap:18px}
+.benefit .ic{width:48px;height:48px;border-radius:12px;background:var(--teal-soft);color:var(--teal);display:grid;place-items:center;flex:none}
+.benefit .ic svg{width:24px;height:24px}
+.benefit h3{margin-bottom:4px}
+.benefit p{font-size:15px}
+
+/* industries */
+.inds{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.ind{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3.4;color:#fff;display:flex;align-items:flex-end}
+.ind img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ind::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,47,60,0) 35%,rgba(7,47,60,.92) 100%)}
+.ind span{position:relative;z-index:1;padding:20px;font-weight:700;font-size:19px}
+.ind-more{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.ind-more b{color:var(--ink);font-size:14px;margin-right:6px}
+.ind-more span{background:var(--bg);border:1px solid var(--line);padding:7px 14px;border-radius:99px;font-size:14px;font-weight:600;color:var(--ink)}
+
+/* proof (placeholders) */
+.proof{background:var(--bg)}
+.ph-tag{display:inline-block;background:#FFF3CD;color:#6B4E00;font-size:12px;font-weight:700;padding:3px 9px;border-radius:6px;margin-bottom:12px}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.quote{background:#fff;border:1.5px dashed #B9C6CB;border-radius:var(--radius);padding:28px}
+.quote p{font-size:16px;color:var(--ink);margin-bottom:18px}
+.quote .who{display:flex;gap:12px;align-items:center;font-size:14px}
+.quote .av{width:40px;height:40px;border-radius:50%;background:var(--teal-soft);flex:none}
+.quote .who b{color:var(--ink);display:block}
+.logos{margin-top:28px;display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.logos div{height:72px;border:1.5px dashed #B9C6CB;border-radius:10px;display:grid;place-items:center;font-size:13px;font-weight:600;color:#5E6E75;background:#fff}
+
+/* faq */
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px}
+.faq-side p{margin:14px 0 24px}
+details{border-bottom:1px solid var(--line)}
+details:first-child{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font-weight:700;color:var(--ink);font-size:17px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:26px;font-weight:500;color:var(--red)}
+details[open] summary::after{content:"\2212"}
+details .a{padding:0 40px 22px 0}
+.ph-inline{background:#FFF3CD;color:#6B4E00;font-size:12px;font-weight:700;padding:2px 7px;border-radius:5px;white-space:nowrap}
+
+/* final cta */
+.final{background:var(--red);color:#fff}
+.final .wrap{display:flex;justify-content:space-between;align-items:center;gap:40px;padding-top:64px;padding-bottom:64px;flex-wrap:wrap}
+.final h2{color:#fff;max-width:620px}
+.final p{color:#FBE3E4;margin-top:10px;font-size:18px}
+.final .btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--red)}
+.btn-white:hover{background:#FBE3E4}
+
+/* footer */
+footer{background:var(--teal-deep);color:#C4D6DC;font-size:15px}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:40px;padding-top:64px;padding-bottom:48px}
+footer img.flogo{height:44px;width:auto;margin-bottom:18px}
+footer h3{color:#fff;font-size:15px;margin-bottom:16px;text-transform:uppercase;letter-spacing:.06em}
+footer ul{list-style:none;display:grid;gap:9px}
+footer a{text-decoration:none;color:#E4EEF1}
+footer a:hover{color:#fff;text-decoration:underline}
+.contact-list li{display:flex;gap:10px}
+.contact-list svg{width:18px;height:18px;flex:none;margin-top:3px;color:#FF9C9F}
+.ar{font-family:"Noto Kufi Arabic",Tahoma,sans-serif;direction:rtl;display:block;margin-top:14px;color:#E4EEF1}
+.map{margin-top:16px;height:110px;border:1.5px dashed rgba(255,255,255,.3);border-radius:10px;display:grid;place-items:center;font-size:13px;color:#C4D6DC}
+.legal{border-top:1px solid rgba(255,255,255,.12)}
+.legal .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:20px;padding-bottom:20px;font-size:13px;grid-template-columns:none;flex-wrap:wrap}
+
+/* floating whatsapp */
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:60;width:60px;height:60px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 10px 30px -8px rgba(0,0,0,.45);text-decoration:none}
+.wa-float svg{width:30px;height:30px}
+
+/* responsive */
+@media (max-width:1100px){
+  nav.main{display:none}
+  .hero .wrap{grid-template-columns:1fr}
+  .cats{grid-template-columns:repeat(2,1fr)}
+  .inds{grid-template-columns:repeat(2,1fr)}
+  .why .wrap,.faq .wrap{grid-template-columns:1fr;gap:40px}
+  footer .wrap{grid-template-columns:1fr 1fr}
+  .logos{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:760px){
+  .sec{padding:64px 0}
+  .wrap{padding:0 20px}
+  .top .hide-m{display:none}
+  .top{font-size:13px}
+  .head-phone .txt{display:none}
+  .head-cta{gap:12px}
+  .head-cta .btn{padding:10px 14px;font-size:14px}
+  .logo img{height:34px}
+  header.site .wrap{height:66px}
+  .hero .wrap{padding-top:36px;padding-bottom:40px;gap:36px}
+  .hero .lead{font-size:17px}
+  .ticks{grid-template-columns:1fr}
+  .hero-ctas .btn{flex:1 1 100%}
+  .qform{padding:22px}
+  .row2{grid-template-columns:1fr}
+  .trust .wrap{grid-template-columns:1fr 1fr;padding:0}
+  .stat{padding:22px 20px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:6px}
+  .stat:nth-child(2n){border-right:0}
+  .stat b{font-size:28px}
+  .brands .wrap{flex-direction:column;align-items:flex-start;gap:16px}
+  .brands p{max-width:none}
+  .brand-list{gap:10px 22px}
+  .brand-list span{font-size:17px}
+  .cats{grid-template-columns:1fr 1fr;gap:12px}
+  .cat .pic{height:120px;padding:12px}
+  .cat .pic img{max-height:96px}
+  .cat .body{padding:14px}
+  .cat h3{font-size:16px}
+  .cat p{display:none}
+  .steps,.quotes{grid-template-columns:1fr}
+  .why-photo .card{left:12px;right:12px;bottom:12px;max-width:none}
+  .inds{gap:12px}
+  .ind span{font-size:16px;padding:14px}
+  .logos{grid-template-columns:repeat(2,1fr)}
+  .final .btns .btn{flex:1 1 100%}
+  footer .wrap{grid-template-columns:1fr;gap:32px}
+  .wa-float{right:16px;bottom:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- Top bar: quick contact -->
+<div class="top">
+  <div class="wrap">
+    <span>100% Egyptian supplier <span class="hide-m">· 25+ years of engineering experience</span></span>
+    <div class="links">
+      <a href="mailto:info@emetcoeg.com"><span class="hide-m">info@emetcoeg.com</span></a>
+      <a href="tel:+20227049740">+20 2 2704 9740</a>
+    </div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a href="#" class="logo" aria-label="Emetco home"><img src="../../assets/logo/emetco-logo-color.png" alt="Emetco — Engineering Technology" width="165" height="42"></a>
+    <nav class="main" aria-label="Main">
+      <a href="#products">Products</a>
+      <a href="#how">How it works</a>
+      <a href="#why">Why Emetco</a>
+      <a href="#industries">Industries</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="head-cta">
+      <a class="head-phone" href="tel:+201099654547" aria-label="Call +20 10 9965 4547">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span class="txt">+20 10 9965 4547</span>
+      </a>
+      <a class="btn btn-red" href="#quote">Request a Quote</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" role="img" aria-label="Gas processing plant"></div>
+  <div class="wrap">
+    <div>
+      <div class="badge-row"><span class="dot"></span>100% Egyptian · Founded by engineers</div>
+      <h1>Valves, pumps &amp; instruments from <em>40+ global brands</em>. One Egyptian supplier.</h1>
+      <p class="lead">Emetco sources the equipment your plant needs, from ABB, Siemens, Emerson and more, for oil &amp; gas, petrochemicals, power and water. Send us your list and get one clear quotation.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-red" href="#quote">Request a Quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-wa" href="https://wa.me/201099654547?text=Hello%20Emetco%2C%20I%20would%20like%20a%20quotation%20for%3A" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 2.2 12C2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.8-9.8 9.8zM20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.3-1.7c1.7.9 3.7 1.4 5.7 1.4 6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3z"/></svg>
+          Chat on WhatsApp</a>
+      </div>
+      <ul class="ticks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>25+ years of engineering experience</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Products to international standards</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>One supplier for your whole list</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Local team in Cairo</li>
+      </ul>
+    </div>
+
+    <!-- Quote form -->
+    <div class="qform" id="quote">
+      <form id="rfq" novalidate>
+        <h2>Get your quotation</h2>
+        <p class="sub">Tell us what you need. Our engineers will get back to you with a quote.</p>
+        <fieldset class="chips">
+          <legend>What do you need?</legend>
+          <label class="chip"><input type="checkbox" name="cat" value="Valves &amp; Actuators"><span>Valves &amp; Actuators</span></label>
+          <label class="chip"><input type="checkbox" name="cat" value="Pumps &amp; Motors"><span>Pumps &amp; Motors</span></label>
+          <label class="chip"><input type="checkbox" name="cat" value="Instrumentation"><span>Instrumentation</span></label>
+          <label class="chip"><input type="checkbox" name="cat" value="Automation &amp; Control"><span>Automation &amp; Control</span></label>
+          <label class="chip"><input type="checkbox" name="cat" value="Cables"><span>Cables</span></label>
+          <label class="chip"><input type="checkbox" name="cat" value="Explosion-Proof &amp; Safety"><span>Explosion-Proof</span></label>
+          <label class="chip"><input type="checkbox" name="cat" value="Burner Ignition"><span>Burner Ignition</span></label>
+          <label class="chip"><input type="checkbox" name="cat" value="Tank Fittings &amp; Relief Valves"><span>Tank Fittings</span></label>
+          <label class="chip"><input type="checkbox" name="cat" value="Other"><span>Other</span></label>
+        </fieldset>
+        <div class="field">
+          <label class="lbl" for="f-need">Items, part numbers or brands</label>
+          <textarea id="f-need" rows="2" placeholder="e.g. 4&quot; ball valve with pneumatic actuator, 10 pcs"></textarea>
+        </div>
+        <div class="row2">
+          <div class="field"><label class="lbl" for="f-name">Name &amp; company</label><input id="f-name" type="text" autocomplete="name" placeholder="Your name, company"></div>
+          <div class="field"><label class="lbl" for="f-phone">Phone / WhatsApp</label><input id="f-phone" type="tel" autocomplete="tel" placeholder="+20 1X XXXX XXXX"></div>
+        </div>
+        <button class="btn btn-red" type="submit">Request a Quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <div class="form-foot">
+          <span>No obligation. Your data stays private.</span>
+          <a href="mailto:info@emetcoeg.com?subject=Request%20for%20Quotation">Email your list instead</a>
+        </div>
+      </form>
+      <div class="form-ok" role="status" aria-live="polite">
+        <h3>Thank you! We got your request.</h3>
+        <p>Our team will contact you soon. Need it faster? Call <a href="tel:+201099654547">+20 10 9965 4547</a>.</p>
+        <p style="margin-top:10px;font-size:13px">(Demo only: this concept does not send data.)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="trust" aria-label="Key facts">
+  <div class="wrap">
+    <div class="stat"><div><b>100%</b></div><span>Egyptian company<i>Local team, local support</i></span></div>
+    <div class="stat"><div><b>25+</b></div><span>Years of experience<i>Founded by engineers</i></span></div>
+    <div class="stat"><div><b>40+</b></div><span>International brands<i>Supplied through trusted partners</i></span></div>
+    <div class="stat"><div><b>8</b></div><span>Industries served<i>From oil &amp; gas to food</i></span></div>
+  </div>
+</section>
+
+<!-- BRANDS STRIP -->
+<section class="brands" aria-label="Brands we supply">
+  <div class="wrap">
+    <p>Brands we supply</p>
+    <div class="brand-list">
+      <span>ABB</span><span>Siemens</span><span>Emerson</span><span>Endress+Hauser</span><span>Schneider Electric</span><span>Honeywell</span><span>Eaton</span><span>Flowserve</span><span>KSB</span><span>Grundfos</span><span>Rotork</span><span>+ more</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="sec" id="products">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">What we supply</span><h2>Everything on your list, from one supplier</h2></div>
+      <p>Pick a category and send your request. Not sure where your item fits? Send it anyway; our engineers will sort it.</p>
+    </div>
+    <div class="cats">
+      <article class="cat"><div class="pic"><img src="../../assets/products/valves/valves-p03-023.jpg" alt="Ball valve with pneumatic actuator" loading="lazy"></div>
+        <div class="body"><h3>Valves &amp; Actuators</h3><p>Gate, globe, ball, butterfly and control valves, with pneumatic and electric actuators.</p><a class="q" href="#quote" data-cat="Valves &amp; Actuators">Get a quote →</a></div></article>
+      <article class="cat"><div class="pic"><img src="../../assets/products/pumps/pumps-p07-203.jpg" alt="Multistage centrifugal pump" loading="lazy"></div>
+        <div class="body"><h3>Pumps &amp; Motors</h3><p>Centrifugal, submersible, dosing and diaphragm pumps, plus AC/DC motors and drives.</p><a class="q" href="#quote" data-cat="Pumps &amp; Motors">Get a quote →</a></div></article>
+      <article class="cat"><div class="pic"><img src="../../assets/products/instrumentation/instrumentation-p08-215.jpg" alt="Pressure and flow transmitters" loading="lazy"></div>
+        <div class="body"><h3>Instrumentation</h3><p>Flow, pressure and temperature transmitters, sensors and calibration devices.</p><a class="q" href="#quote" data-cat="Instrumentation">Get a quote →</a></div></article>
+      <article class="cat"><div class="pic"><img src="../../assets/products/automation-control/automation-control-p09-245.jpg" alt="PLC controller modules" loading="lazy"></div>
+        <div class="body"><h3>Automation &amp; Control</h3><p>PLC, DCS and SCADA cards, soft starters, VSDs and turbine spare parts.</p><a class="q" href="#quote" data-cat="Automation &amp; Control">Get a quote →</a></div></article>
+      <article class="cat"><div class="pic"><img src="../../assets/products/cables/cables-p13-285.jpg" alt="Power cable cross-sections" loading="lazy"></div>
+        <div class="body"><h3>Cables</h3><p>Control, instrument and fire alarm cables; marine, high-temp and chemical-resistant.</p><a class="q" href="#quote" data-cat="Cables">Get a quote →</a></div></article>
+      <article class="cat"><div class="pic"><img src="../../assets/products/explosion-proof/explosion-proof-p14-304.jpg" alt="Explosion-proof control station" loading="lazy"></div>
+        <div class="body"><h3>Explosion-Proof &amp; Safety</h3><p>ATEX lighting and control panels, fire alarm and fire fighting systems.</p><a class="q" href="#quote" data-cat="Explosion-Proof &amp; Safety">Get a quote →</a></div></article>
+      <article class="cat"><div class="pic"><img src="../../assets/products/burner-ignition/burner-ignition-p12-281.jpg" alt="Flame scanners and igniters" loading="lazy"></div>
+        <div class="body"><h3>Burner Ignition</h3><p>Igniters, flame scanners, oil and gas guns, and OEM replacement parts.</p><a class="q" href="#quote" data-cat="Burner Ignition">Get a quote →</a></div></article>
+      <article class="cat"><div class="pic"><img src="../../assets/products/tank-fittings-relief-valves/tank-fittings-relief-valves-p16-344.jpg" alt="Pressure and vacuum relief valve" loading="lazy"></div>
+        <div class="body"><h3>Tank Fittings &amp; Relief Valves</h3><p>Pressure/vacuum relief valves, flame arresters, level gauges and cathodic protection.</p><a class="q" href="#quote" data-cat="Tank Fittings &amp; Relief Valves">Get a quote →</a></div></article>
+    </div>
+    <div class="cats-foot">
+      <span>Have a long list or a datasheet?</span>
+      <a class="btn btn-line" href="mailto:info@emetcoeg.com?subject=Request%20for%20Quotation">Email it to info@emetcoeg.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec how" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">How it works</span><h2>Your quote in 3 simple steps</h2></div>
+      <p>No account, no catalog to search. Just tell us what you need.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Send your list</h3><p>Share items, part numbers, brands or a datasheet by form, email or WhatsApp.</p></div>
+      <div class="step"><div class="n">2</div><h3>We source from trusted brands</h3><p>Our engineers check your specs and source the right products from our international partners.</p></div>
+      <div class="step"><div class="n">3</div><h3>Delivered with support</h3><p>You get one clear quotation, then delivery and support from our local team.</p></div>
+    </div>
+    <div class="cta-line">
+      <a class="btn btn-red" href="#quote">Start with step 1</a>
+      <a class="btn btn-line" href="tel:+201099654547">Call +20 10 9965 4547</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec why" id="why">
+  <div class="wrap">
+    <div class="why-photo">
+      <img src="../../assets/photos/engineer-hardhat.jpg" alt="Engineer in a hard hat checking equipment" loading="lazy">
+      <div class="card"><b>Founded by engineers</b><span>People who know your equipment, not just a price list.</span></div>
+    </div>
+    <div>
+      <span class="eyebrow">Why Emetco</span>
+      <h2>Less hassle for your procurement team</h2>
+      <div class="benefits">
+        <div class="benefit"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h12"/></svg></div>
+          <div><h3>One supplier, many brands</h3><p>Valves, pumps, instruments and cables on one quotation, from 40+ international brands. Fewer vendors to manage.</p></div></div>
+        <div class="benefit"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+          <div><h3>The right part, the first time</h3><p>Our engineers check specs before we quote, so you get products that meet international standards and fit your plant.</p></div></div>
+        <div class="benefit"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <div><h3>Cost-effective sourcing</h3><p>A wide network of trusted partners helps us find good value for your budget.</p></div></div>
+        <div class="benefit"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+          <div><h3>A local partner you can call</h3><p>A 100% Egyptian team in Cairo. Talk to a real engineer by phone or WhatsApp.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="sec" id="industries" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Industries we serve</span><h2>Supplying the plants that power Egypt</h2></div>
+      <p>We supply industry, oil &amp; gas, petrochemicals, power, utilities and manufacturing.</p>
+    </div>
+    <div class="inds">
+      <div class="ind"><img src="../../assets/photos/offshore-platform.jpg" alt="Offshore oil platform" loading="lazy"><span>Oil &amp; Gas</span></div>
+      <div class="ind"><img src="../../assets/photos/refinery-night.jpg" alt="Petrochemical refinery at night" loading="lazy"><span>Petrochemicals</span></div>
+      <div class="ind"><img src="../../assets/photos/power-plant-day.jpg" alt="Power generation plant" loading="lazy"><span>Power Generation</span></div>
+      <div class="ind"><img src="../../assets/photos/chemical-plant-tanks.jpg" alt="Water treatment and process tanks" loading="lazy"><span>Water &amp; Wastewater</span></div>
+    </div>
+    <div class="ind-more"><b>Also:</b><span>Utilities</span><span>Manufacturing</span><span>Marine &amp; Offshore</span><span>Food Industry</span></div>
+  </div>
+</section>
+
+<!-- PROOF (placeholders) -->
+<section class="sec proof" aria-label="What clients say">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Our clients</span><h2>What our clients say</h2></div>
+      <p><span class="ph-tag">Placeholder</span><br>Real quotes and client logos to collect from Emetco before launch.</p>
+    </div>
+    <div class="quotes">
+      <div class="quote"><span class="ph-tag">Placeholder quote</span><p>"Client testimonial goes here: one or two sentences about speed, quality or support."</p><div class="who"><span class="av"></span><div><b>Name, Job title</b>Company, industry</div></div></div>
+      <div class="quote"><span class="ph-tag">Placeholder quote</span><p>"Client testimonial goes here: a real result, for example a part found or a shutdown supported."</p><div class="who"><span class="av"></span><div><b>Name, Job title</b>Company, industry</div></div></div>
+      <div class="quote"><span class="ph-tag">Placeholder quote</span><p>"Client testimonial goes here: why they keep coming back to Emetco."</p><div class="who"><span class="av"></span><div><b>Name, Job title</b>Company, industry</div></div></div>
+    </div>
+    <div class="logos" aria-label="Client logo placeholders">
+      <div>Client logo</div><div>Client logo</div><div>Client logo</div><div>Client logo</div><div>Client logo</div><div>Client logo</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec faq" id="faq">
+  <div class="wrap">
+    <div class="faq-side">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions before you ask for a quote</h2>
+      <p>Can't find your answer? Our team is one message away.</p>
+      <a class="btn btn-wa" href="https://wa.me/201099654547" target="_blank" rel="noopener">Ask us on WhatsApp</a>
+    </div>
+    <div>
+      <details open><summary>How do I request a quotation?</summary><div class="a">Use the quote form at the top of this page, email your list to <a href="mailto:info@emetcoeg.com">info@emetcoeg.com</a>, or send it on WhatsApp to +20 10 9965 4547. Part numbers, brands or a datasheet all help.</div></details>
+      <details><summary>Which brands do you supply?</summary><div class="a">We supply 40+ international brands, including ABB, Siemens, Emerson (Fisher, Rosemount), Endress+Hauser, Schneider Electric, Honeywell, GE, Eaton (CEAG), Flowserve, KSB, Grundfos, Rotork, Spirax Sarco and more.</div></details>
+      <details><summary>Can you find spare parts for older equipment?</summary><div class="a">We supply PLC, DCS and SCADA control cards, turbine spare parts, and OEM replacement parts for burner and flame systems. Send us the part number and we will check it for you.</div></details>
+      <details><summary>Which industries do you work with?</summary><div class="a">Oil &amp; gas, petrochemicals, power generation, water &amp; wastewater, utilities, manufacturing, marine &amp; offshore and the food industry.</div></details>
+      <details><summary>How fast will I get a reply?</summary><div class="a"><span class="ph-inline">To confirm with client</span> Response time for quotations goes here, for example "within one working day".</div></details>
+      <details><summary>Do you deliver outside Cairo?</summary><div class="a"><span class="ph-inline">To confirm with client</span> Delivery areas and terms go here.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" aria-label="Request a quote">
+  <div class="wrap">
+    <div>
+      <h2>Have a list ready? Get your quote today.</h2>
+      <p>Send it now and talk to an engineer, not a call center.</p>
+    </div>
+    <div class="btns">
+      <a class="btn btn-white" href="#quote">Request a Quote</a>
+      <a class="btn btn-ghost" href="tel:+201099654547">Call +20 10 9965 4547</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <img class="flogo" src="../../assets/logo/emetco-logo-white.png" alt="Emetco — Engineering Technology" width="173" height="44" loading="lazy">
+      <p>Electromechanical Engineering &amp; Trading Co. A 100% Egyptian supplier of electrical, mechanical and control equipment.</p>
+      <span class="ar" lang="ar">الكهروميكانيكية للهندسة والتجارة</span>
+    </div>
+    <div>
+      <h3>Products</h3>
+      <ul>
+        <li><a href="#products">Valves &amp; Actuators</a></li>
+        <li><a href="#products">Pumps &amp; Motors</a></li>
+        <li><a href="#products">Instrumentation</a></li>
+        <li><a href="#products">Automation &amp; Control</a></li>
+        <li><a href="#products">Cables</a></li>
+        <li><a href="#products">Explosion-Proof &amp; Safety</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Company</h3>
+      <ul>
+        <li><a href="#why">About Emetco</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#quote">Request a Quote</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <ul class="contact-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>30 Street 270, New Maadi, Cairo, Egypt</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg><a href="tel:+201099654547">+20 10 9965 4547 (mobile &amp; WhatsApp)</a></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+20227049740">+20 2 2704 9740 (tel / fax)</a></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg><a href="mailto:info@emetcoeg.com">info@emetcoeg.com</a></li>
+      </ul>
+      <div class="map">Map placeholder (Google Maps embed)</div>
+    </div>
+  </div>
+  <div class="legal">
+    <div class="wrap">
+      <span>© 2026 Emetco. All rights reserved.</span>
+      <span>Commercial register 116897 · Tax card 555-381-137</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/201099654547?text=Hello%20Emetco%2C%20I%20would%20like%20a%20quotation%20for%3A" target="_blank" rel="noopener" aria-label="Chat with Emetco on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 2.2 12C2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.8-9.8 9.8zM20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.3-1.7c1.7.9 3.7 1.4 5.7 1.4 6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3z"/></svg>
+</a>
+
+<script>
+// "Get a quote" on a category card: pre-select that category in the form, then scroll to it.
+document.querySelectorAll('a.q[data-cat]').forEach(function(a){
+  a.addEventListener('click', function(){
+    var v = a.getAttribute('data-cat');
+    document.querySelectorAll('#rfq input[name=cat]').forEach(function(i){ if(i.value === v) i.checked = true; });
+    setTimeout(function(){ document.getElementById('f-need').focus({preventScroll:true}); }, 600);
+  });
+});
+// Demo submit: no data is sent.
+document.getElementById('rfq').addEventListener('submit', function(e){
+  e.preventDefault();
+  document.getElementById('quote').classList.add('sent');
+});
+</script>
+</body>
+</html>
