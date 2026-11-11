@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emetco — Concept 06 v2: Simply Supplied</title>
+<meta name="description" content="Valves, pumps, instrumentation, automation and cables from international brands, supplied by Egyptian engineers with 25+ years of experience. Request a quote today.">
+<link rel="icon" href="../../assets/logo/favicon-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+/* Review param: ?hero=a|b|c (set before paint, no flash) */
+(function(){
+  var q=new URLSearchParams(location.search),h=(q.get('hero')||'a').toLowerCase();
+  if(!/^[abc]$/.test(h))h='a';
+  var d=document.documentElement; d.setAttribute('data-hero',h); d.classList.add('js');
+})();
+</script>
+<style>
+:root{
+  --white:#fff;
+  --soft:#f5f5f7;
+  --soft-2:#ececef;
+  --line:#e3e3e8;
+  --ink:#1d1d1f;
+  --ink-2:#55555b;     /* body gray: 7.3:1 on white, 6.7:1 on --soft */
+  --ink-3:#6b6b71;     /* meta: 5.3:1 on white, 4.9:1 on --soft */
+  --red:#ad1e24;       /* brand red: main call to action only */
+  --red-dark:#8f171c;
+  --teal:#0b4557;      /* brand teal: small details */
+  --teal-soft:#e6eef0;
+  --wa:#0e7a43;
+  --wa-f:#1c9e52;      /* float buttons: lighter WhatsApp green, 3.5:1 with the white icon */        /* WhatsApp button green, 5.5:1 with white */
+  --radius:28px;
+  --radius-s:18px;
+  --wrap:1200px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --shadow:0 30px 60px -36px rgba(16,24,40,.28),0 2px 6px rgba(16,24,40,.04);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+h1,h2,h3{text-wrap:balance}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--white);
+  font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+svg.i{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+svg.wa-i{width:22px;height:22px;flex:none;fill:currentColor}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 32px}
+:focus-visible{outline:2.5px solid var(--teal);outline-offset:3px;border-radius:8px}
+.ph-tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.02em;color:#7a4b00;background:#fff3d6;border-radius:6px;padding:2px 7px;vertical-align:2px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 28px;border-radius:999px;font-weight:700;border:0;cursor:pointer;
+  font-size:16px;letter-spacing:-.005em;transition:background .3s var(--ease),transform .3s var(--ease),box-shadow .3s var(--ease);white-space:nowrap}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 8px 22px -10px rgba(173,30,36,.6)}
+.btn-red:hover{background:var(--red-dark);transform:translateY(-1px)}
+.btn-ghost{background:var(--white);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-ghost .wa-i{color:var(--wa)}
+.btn-sm{height:42px;padding:0 20px;font-size:15px}
+.link{color:var(--teal);font-weight:700;display:inline-flex;align-items:center;gap:6px}
+.link .arr{transition:transform .3s var(--ease)}
+.link:hover .arr{transform:translateX(4px)}
+
+/* Header */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(18px);
+  -webkit-backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid transparent;transition:border-color .3s}
+.hdr.scrolled{border-bottom-color:var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.hdr .logo img{height:40px;width:auto}
+.nav{display:flex;gap:32px;font-size:15px;font-weight:600;color:var(--ink-2)}
+.nav a{transition:color .2s}
+.nav a:hover,.nav a[aria-current]{color:var(--ink)}
+.hdr-cta{display:flex;align-items:center;gap:18px}
+.hdr-phone{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:var(--ink)}
+.hdr-phone .i{color:var(--teal);width:18px;height:18px}
+.menu-btn{display:none;width:44px;height:44px;border:0;background:var(--soft);border-radius:50%;cursor:pointer;align-items:center;justify-content:center}
+.menu-btn span{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;position:relative}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--ink);border-radius:2px;transition:transform .3s var(--ease)}
+.menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
+.mnav{display:none}
+.hq{display:none!important}
+
+/* Eyebrow */
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--teal);letter-spacing:.01em}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal)}
+
+/* ===== HERO VARIANTS ===== */
+.hero-v{display:none}
+html:not([data-hero]) .hero-a,[data-hero="a"] .hero-a,[data-hero="b"] .hero-b,[data-hero="c"] .hero-c{display:block}
+.hero-v .up{animation:up 1s var(--ease) both}
+.hero-v .up.d1{animation-delay:.08s}.hero-v .up.d2{animation-delay:.16s}.hero-v .up.d3{animation-delay:.24s}.hero-v .up.d4{animation-delay:.32s}
+@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.trust{display:flex;gap:28px;flex-wrap:wrap;list-style:none;font-size:15px;font-weight:600;color:var(--ink-2)}
+.trust li{display:flex;align-items:center;gap:8px}
+.trust .i{width:18px;height:18px;color:var(--teal);stroke-width:2.6}
+.trust b{color:var(--ink);font-weight:800}
+
+/* Hero A — stronger centered + product stage */
+.hero-a{padding:60px 0 0;text-align:center}
+.hero-a h1{font-size:clamp(46px,6.2vw,88px);line-height:1;letter-spacing:-.05em;font-weight:800;margin:22px auto 0}
+.hero-a h1 span{color:var(--teal)}
+.hero-a .lead{font-size:clamp(18px,1.6vw,21px);color:var(--ink-2);max-width:640px;margin:24px auto 0;line-height:1.5}
+.hero-a .ctas{display:flex;gap:12px;justify-content:center;margin-top:30px;flex-wrap:wrap}
+.micro{font-size:14px;font-weight:600;color:var(--ink-3);margin-top:14px}
+.hero-a .trust{justify-content:center;margin-top:20px}
+.stage{margin:48px auto 0;max-width:1280px;padding:0 32px}
+.stage-in{background:radial-gradient(120% 90% at 50% 100%,#fff 0%,var(--soft) 55%,#efeff2 100%);border-radius:40px;position:relative;overflow:hidden;
+  padding:56px 40px 52px}
+.stage-row{display:flex;align-items:flex-end;justify-content:center;gap:clamp(8px,2.6vw,44px)}
+.stage-row::after{content:"";position:absolute;left:12%;right:12%;bottom:84px;height:1px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.08),transparent)}
+.stage figure{display:flex;flex-direction:column;align-items:center}
+.stage img{mix-blend-mode:multiply}
+.stage .p1 img{width:190px}.stage .p2 img{width:200px}.stage .p3 img{width:300px}.stage .p4 img{width:240px}.stage .p5 img{width:175px}
+.stage figcaption{margin-top:16px;font-size:13px;font-weight:700;color:var(--ink-3)}
+.stage-brands{margin-top:34px;border-top:1px solid rgba(0,0,0,.06);display:flex;align-items:center;justify-content:center;gap:clamp(18px,3vw,44px);
+  padding:22px 0 24px;flex-wrap:wrap;font-weight:800;letter-spacing:-.02em;color:var(--ink-3);font-size:17px}
+.stage-brands small{font-size:13px;font-weight:700;letter-spacing:0;color:var(--ink-3)}
+.js .stage img,.js .stage figcaption{animation:up 1.1s var(--ease) both}
+.stage .p1 *{animation-delay:.3s!important}.stage .p2 *{animation-delay:.38s!important}.stage .p3 *{animation-delay:.46s!important}.stage .p4 *{animation-delay:.54s!important}.stage .p5 *{animation-delay:.62s!important}
+
+/* Hero B — split: message + quick quote form */
+.hero-b{padding:64px 0 24px}
+.hb{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}
+.hero-b h1{font-size:clamp(42px,5.2vw,72px);line-height:1.02;letter-spacing:-.048em;font-weight:800;margin-top:20px}
+.hero-b h1 span{color:var(--teal)}
+.hero-b .lead{font-size:19px;color:var(--ink-2);margin-top:22px;max-width:520px}
+.hero-b .ctas{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.tpoints{list-style:none;margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.tpoints li{background:var(--soft);border-radius:var(--radius-s);padding:18px 18px 16px}
+.tpoints b{display:block;font-size:28px;font-weight:800;letter-spacing:-.04em;line-height:1}
+.tpoints b sup{font-size:.5em;color:var(--teal);vertical-align:.8em}
+.tpoints span{display:block;font-size:14px;color:var(--ink-2);margin-top:8px;line-height:1.35;font-weight:600}
+.qcard{background:#fff;border-radius:32px;box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line)}
+.qcard-top{background:var(--soft);display:flex;align-items:flex-end;justify-content:center;gap:18px;padding:26px 24px 0;height:150px}
+.qcard-top img{mix-blend-mode:multiply;max-height:118px;width:auto}
+.qcard-body{padding:26px 30px 30px}
+.qcard h2{font-size:24px;font-weight:800;letter-spacing:-.03em}
+.qcard p.sub{font-size:15px;color:var(--ink-2);margin-top:4px}
+.qcard form{margin-top:18px;display:grid;gap:12px}
+.qcard .btn{width:100%;margin-top:4px}
+.qcard .alt{font-size:14px;color:var(--ink-2);text-align:center;margin-top:12px}
+.qcard .alt a{color:var(--wa);font-weight:700}
+
+/* Hero C — human photo + clean overlay card */
+.hero-c{padding:28px 0 8px}
+.hc{position:relative;border-radius:40px;overflow:hidden;min-height:640px;display:flex;align-items:center}
+.hc>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 30%}
+.hc::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 55%)}
+.hc-card{position:relative;margin-left:48px;max-width:620px;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-radius:32px;padding:44px 44px 40px;box-shadow:var(--shadow)}
+.hero-c h1{font-size:clamp(38px,4.2vw,58px);line-height:1.03;letter-spacing:-.045em;font-weight:800;margin-top:18px}
+.hero-c h1 span{color:var(--teal)}
+.hero-c .lead{font-size:18px;color:var(--ink-2);margin-top:18px}
+.hero-c .ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.hero-c .trust{margin-top:26px;gap:10px 22px;font-size:14px}
+.hc-badge{position:absolute;right:28px;bottom:28px;background:#fff;border-radius:999px;padding:10px 18px 10px 12px;display:flex;align-items:center;gap:10px;
+  font-size:14px;font-weight:700;box-shadow:var(--shadow)}
+.hc-badge img{width:28px;height:auto}
+
+/* ===== Sections ===== */
+section{scroll-margin-top:90px}
+.sec{padding:120px 0}
+.sec-head{text-align:center;max-width:780px;margin:0 auto 60px}
+.sec-head h2{font-size:clamp(34px,4.4vw,56px);line-height:1.06;letter-spacing:-.04em;font-weight:800;margin-top:16px}
+.sec-head p{color:var(--ink-2);font-size:19px;margin-top:18px}
+
+/* Brands strip */
+.brands-sec{padding:72px 0 0}
+.brands-sec .lbl{text-align:center;font-size:14px;font-weight:700;color:var(--ink-3)}
+.brands{overflow:hidden;position:relative;padding:4px 0;margin-top:10px}
+.brands::before,.brands::after{content:"";position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.brands::before{left:0;background:linear-gradient(90deg,#fff,rgba(255,255,255,0))}
+.brands::after{right:0;background:linear-gradient(270deg,#fff,rgba(255,255,255,0))}
+.track{display:flex;gap:56px;width:max-content;animation:slide 80s linear infinite;padding:14px 0}
+.track span{font-size:clamp(22px,2.3vw,30px);font-weight:700;letter-spacing:-.03em;color:var(--ink-3);white-space:nowrap}
+.brands:hover .track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+.brand-note{text-align:center;color:var(--ink-3);font-size:13px;margin-top:10px}
+
+/* Products */
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pcard{background:var(--soft);border-radius:var(--radius);padding:28px 26px 26px;display:flex;flex-direction:column;
+  transition:transform .5s var(--ease),box-shadow .5s var(--ease),background .5s}
+.pcard:hover{transform:translateY(-4px);background:#f2f2f5;box-shadow:0 22px 40px -28px rgba(0,0,0,.25)}
+.pcard .pic{height:200px;display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.pcard .pic img{max-height:190px;max-width:100%;width:auto;mix-blend-mode:multiply;transition:transform .7s var(--ease)}
+.pcard:hover .pic img{transform:scale(1.04)}
+.pcard h3{font-size:20px;letter-spacing:-.02em;font-weight:800;line-height:1.2}
+.pcard p{color:var(--ink-2);font-size:15px;margin-top:8px;flex:1}
+.pcard .link{margin-top:18px;font-size:15px}
+.pmore{text-align:center;margin-top:40px}
+
+/* How it works */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+.step{border-radius:var(--radius);padding:36px 32px 34px;box-shadow:inset 0 0 0 1.5px var(--line);position:relative}
+.step .num{width:44px;height:44px;border-radius:50%;background:var(--teal-soft);color:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px}
+.step h3{font-size:22px;font-weight:800;letter-spacing:-.025em;margin-top:24px}
+.step p{color:var(--ink-2);font-size:16px;margin-top:10px}
+.step .eg{margin-top:18px;display:flex;flex-wrap:wrap;gap:6px}
+.step .eg span{font-size:13px;font-weight:700;background:var(--soft);border-radius:999px;padding:5px 12px;color:var(--ink-2)}
+.steps-cta{display:flex;justify-content:center;gap:12px;margin-top:40px;flex-wrap:wrap}
+
+/* Spotlight */
+.spot{background:var(--soft);border-radius:40px;padding:80px 72px;display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+.spot h2{font-size:clamp(34px,4vw,52px);line-height:1.06;letter-spacing:-.04em;font-weight:800;margin-top:16px}
+.spot p{color:var(--ink-2);margin-top:18px;font-size:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.chip{background:#fff;border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;color:var(--ink)}
+.chip.t{background:var(--teal-soft);color:var(--teal)}
+.spot .ctas{margin-top:32px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.vtile{background:#fff;border-radius:var(--radius-s);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:22px;position:relative}
+.vtile img{max-height:100%;width:auto;max-width:100%}
+.vtile small{position:absolute;left:16px;bottom:12px;font-size:12px;font-weight:700;color:var(--ink-3)}
+
+/* Why Emetco */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.wcard{background:#fff;box-shadow:inset 0 0 0 1.5px var(--line);border-radius:var(--radius);padding:32px 28px}
+.wcard .ic{width:48px;height:48px;border-radius:14px;background:var(--teal-soft);color:var(--teal);display:flex;align-items:center;justify-content:center}
+.wcard .ic .i{width:24px;height:24px}
+.wcard h3{font-size:20px;font-weight:800;letter-spacing:-.02em;margin-top:22px;line-height:1.25}
+.wcard p{color:var(--ink-2);font-size:15px;margin-top:10px}
+.facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;margin-top:72px;padding-top:56px;border-top:1px solid var(--line)}
+.fact b{display:block;font-size:clamp(44px,5vw,64px);font-weight:800;letter-spacing:-.045em;line-height:1}
+.fact b sup{font-size:.45em;color:var(--teal);vertical-align:.95em;margin-left:2px}
+.fact span{display:block;margin-top:12px;color:var(--ink-2);font-size:16px;font-weight:500}
+
+/* Mid CTA band */
+.band{background:var(--teal-soft);border-radius:40px;padding:56px 64px;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.band h2{font-size:clamp(28px,3.2vw,40px);line-height:1.1;letter-spacing:-.035em;font-weight:800;max-width:18ch}
+.band p{color:#2f4b55;font-size:17px;margin-top:10px}
+.band .ctas{display:flex;gap:12px;flex-wrap:wrap;flex:none}
+
+/* Industries */
+.igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.icard{border-radius:var(--radius);overflow:hidden;background:var(--soft)}
+.icard .ph{aspect-ratio:4/3;overflow:hidden}
+.icard .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.icard:hover .ph img{transform:scale(1.04)}
+.icard .cap{padding:20px 24px 22px}
+.icard h3{font-size:19px;font-weight:800;letter-spacing:-.02em}
+.also{margin-top:36px;text-align:center;color:var(--ink-2);font-size:16px}
+.also .chips{justify-content:center;margin-top:14px}
+.also .chip{background:var(--soft)}
+
+/* About */
+.about{display:grid;grid-template-columns:1.05fr 1fr;gap:72px;align-items:center}
+.about .ph{border-radius:40px;overflow:hidden;aspect-ratio:4/5}
+.about .ph img{width:100%;height:100%;object-fit:cover;object-position:30% 50%}
+.about h2{font-size:clamp(32px,3.6vw,48px);line-height:1.1;letter-spacing:-.035em;font-weight:800;margin-top:16px}
+.about p{color:var(--ink-2);margin-top:20px;font-size:18px}
+.vision{margin-top:36px;padding:26px 28px;background:var(--soft);border-radius:var(--radius-s)}
+.vision small{font-size:13px;font-weight:700;color:var(--teal)}
+.vision p{margin-top:8px;font-size:19px;color:var(--ink);font-weight:600;line-height:1.45}
+.mv{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.mv div{padding:18px 22px;border-radius:var(--radius-s);box-shadow:inset 0 0 0 1.5px var(--line)}
+.mv small{font-size:13px;font-weight:700;color:var(--ink-3)}
+.mv p{margin-top:4px;font-size:15px;color:var(--ink-2)}
+
+/* Proof (placeholder) */
+.proof{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:stretch}
+.quote-card{background:var(--soft);border-radius:var(--radius);padding:48px 48px 40px;display:flex;flex-direction:column;justify-content:space-between}
+.quote-card blockquote{font-size:clamp(22px,2.2vw,28px);line-height:1.35;letter-spacing:-.02em;font-weight:700;margin-top:18px}
+.quote-card .who{display:flex;align-items:center;gap:14px;margin-top:32px}
+.quote-card .av{width:48px;height:48px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 1.5px var(--line)}
+.quote-card .who b{display:block;font-size:15px}
+.quote-card .who span{font-size:14px;color:var(--ink-2)}
+.logos{border-radius:var(--radius);box-shadow:inset 0 0 0 1.5px var(--line);padding:32px;display:flex;flex-direction:column}
+.logos h3{font-size:16px;font-weight:800}
+.logos p{font-size:14px;color:var(--ink-2);margin-top:4px}
+.lgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px;flex:1}
+.lgrid div{border:1.5px dashed #c9c9cf;border-radius:14px;min-height:72px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--ink-3)}
+
+/* FAQ */
+.faq{max-width:860px;margin:0 auto}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 4px;font-size:19px;font-weight:700;letter-spacing:-.015em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .pl{width:32px;height:32px;border-radius:50%;background:var(--soft);flex:none;position:relative;transition:transform .35s var(--ease),background .3s}
+.faq summary .pl::before,.faq summary .pl::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;margin:-1px 0 0 -6px;background:var(--ink);border-radius:2px}
+.faq summary .pl::after{transform:rotate(90deg)}
+.faq details[open] summary .pl{transform:rotate(45deg);background:var(--teal-soft)}
+.faq details p{color:var(--ink-2);padding:0 56px 26px 4px;font-size:16px}
+.faq details p a{color:var(--teal);font-weight:700}
+
+/* Contact (details + form) — dark brand teal */
+.contact-sec{background:var(--teal);color:#fff;padding:112px 0;position:relative;overflow:hidden}
+.contact-sec .mark{position:absolute;right:-90px;top:-70px;width:560px;opacity:.07;pointer-events:none}
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;position:relative;align-items:start}
+.contact .eyebrow{color:#cfe2e8}.contact .eyebrow::before{background:#cfe2e8}
+.contact h2{font-size:clamp(34px,4vw,52px);line-height:1.05;letter-spacing:-.04em;font-weight:800;margin-top:16px;color:#fff}
+.contact .lead{color:#d3e4e9;font-size:18px;margin-top:16px}
+.clist{list-style:none;margin-top:32px;display:grid;gap:10px}
+.clist a,.clist .row{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);color:#fff;border-radius:var(--radius-s);padding:14px 18px;transition:background .3s,transform .3s var(--ease)}
+.clist a:hover{background:rgba(255,255,255,.13);transform:translateX(3px)}
+.clist .ci{width:44px;height:44px;border-radius:12px;background:#fff;color:var(--teal);display:flex;align-items:center;justify-content:center;flex:none}
+.clist .ci.wa{color:var(--wa)}
+.clist small{display:block;font-size:13px;font-weight:700;color:#c9dce2}
+.clist b{font-size:16px;font-weight:700}
+.cmap{border-radius:var(--radius-s);border:1px solid rgba(255,255,255,.16);background-color:rgba(255,255,255,.05);aspect-ratio:16/10;position:relative;overflow:hidden;
+  background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.14) 1px,transparent 0);background-size:16px 16px}
+.cmap .pin{position:absolute;left:50%;top:42%;transform:translate(-50%,-100%);width:26px;height:26px;border-radius:50% 50% 50% 0;background:#fff;rotate:-45deg;box-shadow:0 6px 14px -4px rgba(0,0,0,.5)}
+.cmap .pin::after{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--red)}
+.cmap .lbl{position:absolute;left:12px;bottom:12px;background:#fff;border-radius:10px;padding:8px 12px;font-size:13px;color:var(--ink-2)}
+.cmap .lbl b{color:var(--ink)}
+.form{background:#fff;color:var(--ink);border-radius:32px;padding:40px;box-shadow:0 34px 70px -24px rgba(0,0,0,.5)}
+.form h3{font-size:26px;font-weight:800;letter-spacing:-.03em}
+.form .sub{font-size:15px;color:var(--ink-2);margin-top:4px}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.f{display:flex;flex-direction:column;gap:6px}
+.f.full{grid-column:1/-1}
+.f label{font-size:14px;font-weight:700}
+.f label span{color:var(--red)}
+.f input,.f select,.f textarea{height:50px;border-radius:14px;border:1.5px solid var(--line);background:#fff;padding:0 16px;font-size:16px;transition:border-color .2s,box-shadow .2s;width:100%}
+.f textarea{height:116px;padding:14px 16px;resize:vertical}
+.f input::placeholder,.f textarea::placeholder{color:#76767c}
+.f input:focus,.f select:focus,.f textarea:focus{outline:0;border-color:var(--teal);box-shadow:0 0 0 4px rgba(11,69,87,.12)}
+.err{display:block;color:var(--red);font-size:13px;font-weight:700}
+.f [aria-invalid="true"]{border-color:var(--red)}
+.ffoot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:22px;flex-wrap:wrap}
+.ffoot small{font-size:14px;color:var(--ink-2)}
+.ffoot small a{color:var(--teal);font-weight:700}
+.form-ok{display:none;margin-top:16px;background:var(--teal-soft);color:var(--teal);border-radius:12px;padding:12px 16px;font-size:15px;font-weight:600}
+.form-ok.show{display:block}
+
+/* Footer — deep teal */
+footer{background:#072f3c;color:#c9dce2;padding:80px 0 40px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px}
+.fgrid h4{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:18px}
+.fgrid li{list-style:none;margin-bottom:10px;font-size:15px;color:#c9dce2}
+.fgrid li a{color:#e3eef1}
+.fgrid li a:hover{color:#fff;text-decoration:underline}
+.flogo img{height:44px;width:auto}
+.ftag{margin-top:18px;color:#c9dce2;font-size:15px;max-width:34ch}
+.ar{margin-top:14px;font-size:15px;color:#afc9d1;font-family:"Segoe UI",Tahoma,system-ui,sans-serif}
+.fcta{margin-top:22px}
+.fbot{margin-top:64px;padding-top:24px;border-top:1px solid rgba(255,255,255,.14);display:flex;justify-content:space-between;gap:20px;font-size:13px;color:#afc9d1;flex-wrap:wrap}
+
+/* ===== Floating buttons ===== */
+.floats{position:fixed;right:24px;bottom:24px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:12px;transition:opacity .3s var(--ease),transform .3s var(--ease)}
+.floats.away{opacity:0;transform:translateY(12px);pointer-events:none}
+.fb{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;border:0;cursor:pointer;
+  box-shadow:0 12px 26px -12px rgba(16,24,40,.5);transition:transform .3s var(--ease)}
+.fb:hover{transform:translateY(-2px) scale(1.04)}
+.fb .wa-i{width:28px;height:28px}
+.fb .i{width:24px;height:24px}
+.fb-wa,.fb-call{background:var(--wa-f)}
+
+/* ===== Review switcher (not part of the design) ===== */
+.review{position:fixed;left:12px;bottom:12px;z-index:70;display:flex;align-items:center;gap:2px;background:rgba(17,17,17,.9);border-radius:999px;padding:3px;
+  font:700 12px/1 system-ui,"Segoe UI",sans-serif;opacity:.55;transition:opacity .25s,transform .25s}
+.review:hover,.review.open{opacity:1}
+.review.away:not(.open){opacity:0;transform:translateY(8px);pointer-events:none}
+.review button{width:26px;height:26px;border:0;border-radius:50%;background:transparent;color:#fff;cursor:pointer;font:inherit;display:flex;align-items:center;justify-content:center}
+.rv-o{display:flex;gap:2px}
+.rv-o[hidden]{display:none}
+.rv-o button{color:#ccc}
+.rv-o button[aria-pressed="true"]{background:#fff;color:#111}
+
+/* Reveal motion */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+
+/* Tablet */
+@media (max-width:1180px){
+  .hdr-phone{display:none}
+}
+@media (max-width:1080px){
+  .nav{gap:22px}
+  .pgrid,.why{grid-template-columns:repeat(2,1fr)}
+  .spot{grid-template-columns:1fr;padding:64px 48px}
+  .about{grid-template-columns:1fr;gap:48px}
+  .about .ph{aspect-ratio:16/10}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .stage .p1,.stage .p5{display:none}
+  .hb{grid-template-columns:1fr;gap:48px}
+  .contact{grid-template-columns:1fr;gap:48px}
+  .band{flex-direction:column;align-items:flex-start}
+  .proof{grid-template-columns:1fr}
+}
+@media (max-width:860px){
+  .nav,.hdr-cta .btn{display:none}
+  .menu-btn{display:flex}
+  .hq{display:inline-flex!important;height:40px;padding:0 16px}
+  .mnav{display:block;position:fixed;inset:76px 0 0;background:#fff;padding:24px;transform:translateY(-8px);opacity:0;visibility:hidden;
+    transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s;z-index:49}
+  .mnav a{display:block;font-size:28px;font-weight:800;letter-spacing:-.03em;padding:12px 0;border-bottom:1px solid var(--line)}
+  .mnav .btn{margin-top:28px;width:100%;justify-content:center;font-size:17px;border:0}
+  .mnav-c{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+  .mnav .mnav-c a{display:flex;align-items:center;justify-content:center;gap:8px;font-size:16px;font-weight:700;letter-spacing:0;border:0;border-radius:999px;height:52px;padding:0;box-shadow:inset 0 0 0 1.5px var(--line)}
+  .mnav-c .wa-i{color:var(--wa)}
+  .menu-open .mnav{opacity:1;visibility:visible;transform:none}
+  .menu-open .menu-btn span{background:transparent}
+  .menu-open .menu-btn span::before{transform:translateY(6px) rotate(45deg)}
+  .menu-open .menu-btn span::after{transform:translateY(-6px) rotate(-45deg)}
+  .facts-grid{grid-template-columns:repeat(2,1fr);row-gap:48px}
+  .igrid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+  .hc{min-height:0;flex-direction:column;align-items:stretch;border-radius:32px}
+  .hc>img{position:relative;height:340px}
+  .hc::before{display:none}
+  .hc-card{margin:-56px 16px 16px;max-width:none}
+  .hc-badge{top:20px;bottom:auto;right:20px}
+}
+/* Mobile */
+@media (max-width:600px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  .hdr .wrap{height:64px}
+  .hdr .logo img{height:32px}
+  .mnav{inset:64px 0 0}
+  .sec{padding:84px 0}
+  .sec-head{margin-bottom:36px}
+  .sec-head p{font-size:17px}
+  .ctas .btn{width:100%}
+  /* Hero A */
+  .hero-a{padding-top:44px}
+  .hero-a h1{font-size:44px}
+  .hero-a .lead{font-size:17px}
+  .hero-a .eyebrow{font-size:13px}
+  .hero-a .eyebrow::before{display:none}
+  .micro{font-size:13px}
+  .hero-a .ctas{flex-direction:column;padding:0 4px}
+  .hero-a .trust{flex-direction:column;align-items:center;gap:8px}
+  .stage{padding:0 12px;margin-top:40px}
+  .stage-in{border-radius:28px;padding:40px 12px 36px}
+  .stage-row{gap:6px}
+  .stage-row::after{bottom:30px}
+  .stage .p2 img{width:96px}.stage .p3 img{width:150px}.stage .p4 img{width:110px}
+  .stage figcaption{display:none}
+  .stage-brands{font-size:15px;gap:8px 18px;padding:18px 8px 20px}
+  .stage-brands small{width:100%;text-align:center}
+  /* Hero B */
+  .hero-b{padding-top:40px}
+  .hero-b h1{font-size:40px}
+  .hero-b .lead{font-size:17px}
+  .hero-b .ctas{flex-direction:column}
+  .only-m{display:inline-flex!important}.hide-m{display:none!important}
+  .tpoints{grid-template-columns:1fr;gap:8px;margin-top:28px}
+  .tpoints li{display:flex;align-items:center;gap:14px;padding:14px 16px}
+  .tpoints b{font-size:24px;min-width:64px}
+  .tpoints span{margin-top:0}
+  .qcard{border-radius:26px}
+  .qcard-top{height:120px;gap:10px;padding:18px 12px 0}
+  .qcard-top img{max-height:90px}
+  .qcard-body{padding:22px 20px 24px}
+  /* Hero C */
+  .hero-c{padding-top:16px}
+  .hc>img{height:280px}
+  .hc-card{margin:-48px 10px 10px;padding:28px 22px 26px;border-radius:24px}
+  .hero-c h1{font-size:36px}
+  .hero-c .lead{font-size:16px}
+  .hero-c .ctas{flex-direction:column}
+  .hc-badge{display:none}
+  /* Sections */
+  .brands-sec{padding-top:56px}
+  .track{gap:34px}
+  .brands::before,.brands::after{width:40px}
+  .pgrid{grid-template-columns:1fr 1fr;gap:12px}
+  .pcard{padding:18px 16px;border-radius:22px}
+  .pcard .pic{height:120px;margin-bottom:14px}
+  .pcard .pic img{max-height:116px}
+  .pcard h3{font-size:16px}
+  .pcard p{display:none}
+  .pcard .link{margin-top:10px;font-size:14px}
+  .step{padding:28px 24px}
+  .steps-cta{flex-direction:column}
+  .spot{padding:44px 22px;border-radius:28px;gap:36px}
+  .spot p{font-size:16px}
+  .vgrid{gap:10px}
+  .why{grid-template-columns:1fr;gap:12px}
+  .wcard{padding:24px 22px;border-radius:22px}
+  .facts-grid{margin-top:48px;padding-top:40px}
+  .fact span{font-size:14px}
+  .band{padding:40px 24px;border-radius:28px;gap:24px}
+  .band .ctas{width:100%;flex-direction:column}
+  .igrid{grid-template-columns:1fr 1fr;gap:12px}
+  .icard{border-radius:22px}
+  .icard .cap{padding:14px 16px 16px}
+  .icard h3{font-size:15px}
+  .about .ph{border-radius:28px;aspect-ratio:4/3}
+  .about p{font-size:16px}
+  .mv{grid-template-columns:1fr}
+  .quote-card{padding:32px 24px;border-radius:22px}
+  .logos{padding:24px;border-radius:22px}
+  .lgrid{grid-template-columns:repeat(2,1fr)}
+  .faq summary{font-size:17px;padding:22px 2px}
+  .faq details p{padding-right:8px}
+  .contact-sec{padding:72px 0}
+  .contact-sec .mark{width:320px;right:-80px;top:-40px}
+  .contact{gap:36px}
+  .contact .lead{font-size:16px}
+  .form{padding:26px 18px;border-radius:24px}
+  .fg{grid-template-columns:1fr}
+  .ffoot .btn{width:100%}
+  footer{padding:56px 0 110px}
+  .fgrid{grid-template-columns:1fr;gap:32px}
+  .fbot{flex-direction:column;margin-top:44px}
+  .floats{right:16px;bottom:16px;gap:10px}
+  .fb{width:52px;height:52px}
+}
+</style>
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><path d="M7.5 7.5h.01"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35M12.05 21.78h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88a9.83 9.83 0 0 1 9.88 9.89c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41z"/></symbol>
+</svg>
+
+<header class="hdr" id="top">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Emetco home"><img src="../../assets/logo/emetco-logo-color.png" alt="Emetco — Engineering Technology" width="157" height="40"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#top" aria-current="page">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#industries">Industries</a>
+      <a href="#brands">Brands</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="hdr-cta">
+      <a href="tel:+201099654547" class="hdr-phone"><svg class="i"><use href="#i-phone"/></svg>+20 10 9965 4547</a>
+      <a href="#quote" class="btn btn-red btn-sm">Request a Quote</a>
+      <a href="#quote" class="btn btn-red btn-sm hq">Quote</a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mnav" id="mnav" aria-label="Mobile">
+  <a href="#about">About</a>
+  <a href="#products">Products</a>
+  <a href="#industries">Industries</a>
+  <a href="#brands">Brands</a>
+  <a href="#contact">Contact</a>
+  <a href="#quote" class="btn btn-red">Request a Quote</a>
+  <div class="mnav-c"><a href="tel:+201099654547"><svg class="i"><use href="#i-phone"/></svg>Call</a><a href="https://wa.me/201099654547" target="_blank" rel="noopener"><svg class="wa-i"><use href="#i-wa"/></svg>WhatsApp</a></div>
+</nav>
+
+<main>
+  <!-- ========== HERO A: stronger centered hero + product stage ========== -->
+  <section class="hero-v hero-a" aria-label="Introduction">
+    <div class="wrap">
+      <span class="eyebrow up">Valves · Pumps · Instrumentation · Automation · Cables</span>
+      <h1 class="up d1">Industrial equipment.<br><span>Simply supplied.</span></h1>
+      <p class="lead up d2">One supplier for international-brand equipment for oil &amp; gas, power and process plants. Sourced by Egyptian engineers with 25+ years of experience.</p>
+      <div class="ctas up d3">
+        <a href="#quote" class="btn btn-red">Request a Quote</a>
+        <a href="https://wa.me/201099654547" class="btn btn-ghost" target="_blank" rel="noopener"><svg class="wa-i"><use href="#i-wa"/></svg>WhatsApp us</a>
+      </div>
+      <p class="micro up d3">Send a part number or a nameplate photo. We reply with a quote.</p>
+      <ul class="trust up d4">
+        <li><svg class="i"><use href="#i-check"/></svg><b>100%</b>&nbsp;Egyptian</li>
+        <li><svg class="i"><use href="#i-check"/></svg><b>25+</b>&nbsp;years of experience</li>
+        <li><svg class="i"><use href="#i-check"/></svg><b>40+</b>&nbsp;international brands</li>
+      </ul>
+    </div>
+    <div class="stage">
+      <div class="stage-in">
+        <div class="stage-row">
+          <figure class="p1"><img src="../../assets/products/instrumentation/instrumentation-p08-212.jpg" alt="Transmitter with digital display" width="257" height="257"><figcaption>Instrumentation</figcaption></figure>
+          <figure class="p2"><img src="../../assets/products/valves/valves-p04-079.jpg" alt="Forged steel check valve" width="225" height="224"><figcaption>Valves</figcaption></figure>
+          <figure class="p3"><img src="../../assets/products/automation-control/automation-control-p10-249.jpg" alt="Control valve with pneumatic actuator" width="291" height="299"><figcaption>Control valves &amp; actuators</figcaption></figure>
+          <figure class="p4"><img src="../../assets/products/pumps/pumps-p07-186.jpg" alt="Industrial pump" width="274" height="199"><figcaption>Pumps</figcaption></figure>
+          <figure class="p5"><img src="../../assets/products/explosion-proof/explosion-proof-p14-311.jpg" alt="Explosion-proof light fitting" width="269" height="289"><figcaption>Explosion-proof</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HERO B: split, message + quick quote form ========== -->
+  <section class="hero-v hero-b" aria-label="Introduction">
+    <div class="wrap hb">
+      <div>
+        <span class="eyebrow up">Electromechanical Engineering &amp; Trading</span>
+        <h1 class="up d1">Your plant's equipment. <span>One trusted supplier.</span></h1>
+        <p class="lead up d2">Valves, pumps, instrumentation, automation and cables from international brands, sourced for oil &amp; gas, power and process plants.</p>
+        <div class="ctas up d3">
+          <a href="#hb-quote" class="btn btn-red only-m">Get a quote</a>
+          <a href="#products" class="btn btn-ghost hide-m">See our products</a>
+          <a href="https://wa.me/201099654547" class="btn btn-ghost" target="_blank" rel="noopener"><svg class="wa-i"><use href="#i-wa"/></svg>WhatsApp us</a>
+        </div>
+        <ul class="tpoints up d4">
+          <li><b>100<sup>%</sup></b><span>Egyptian company</span></li>
+          <li><b>25<sup>+</sup></b><span>Years of engineering experience</span></li>
+          <li><b>40<sup>+</sup></b><span>International brands supplied</span></li>
+        </ul>
+      </div>
+      <div class="qcard up d2" id="hb-quote">
+        <div class="qcard-top" aria-hidden="true">
+          <img src="../../assets/products/valves/valves-p04-080.jpg" alt="" width="231" height="219">
+          <img src="../../assets/products/automation-control/automation-control-p10-249.jpg" alt="" width="291" height="299">
+          <img src="../../assets/products/instrumentation/instrumentation-p08-212.jpg" alt="" width="257" height="257">
+        </div>
+        <div class="qcard-body">
+          <h2>Get a quote</h2>
+          <p class="sub">Tell us what you need. Our engineers will get back to you.</p>
+          <form class="js-form" novalidate>
+            <div class="f"><label for="hb-n">Name <span>*</span></label><input id="hb-n" name="name" autocomplete="name" required></div>
+            <div class="f"><label for="hb-p">Phone / WhatsApp <span>*</span></label><input id="hb-p" name="phone" type="tel" autocomplete="tel" required></div>
+            <div class="f"><label for="hb-m">What do you need? <span>*</span></label><input id="hb-m" name="need" placeholder="Item, brand, model or size" required></div>
+            <button class="btn btn-red" type="submit">Request a Quote</button>
+            <p class="form-ok" role="status">Thank you. This is a design preview, so nothing was sent.</p>
+          </form>
+          <p class="alt">Prefer chat? <a href="https://wa.me/201099654547" target="_blank" rel="noopener">WhatsApp +20 10 9965 4547</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HERO C: human photo + clean overlay card ========== -->
+  <section class="hero-v hero-c" aria-label="Introduction">
+    <div class="wrap">
+      <div class="hc">
+        <img src="../../assets/photos/engineer-hardhat.jpg" alt="Engineer in a hard hat working on an installation" width="960" height="639">
+        <div class="hc-card">
+          <span class="eyebrow up">Emetco · Engineering Technology</span>
+          <h1 class="up d1">Egyptian engineers. <span>International equipment.</span></h1>
+          <p class="lead up d2">Founded by engineers with 25+ years of experience. We supply valves, pumps, instrumentation and automation from brands you trust.</p>
+          <div class="ctas up d3">
+            <a href="#quote" class="btn btn-red">Request a Quote</a>
+            <a href="tel:+201099654547" class="btn btn-ghost"><svg class="i"><use href="#i-phone"/></svg>Call us</a>
+          </div>
+          <ul class="trust up d4">
+            <li><svg class="i"><use href="#i-check"/></svg>100% Egyptian</li>
+            <li><svg class="i"><use href="#i-check"/></svg>40+ brands</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Local team</li>
+          </ul>
+        </div>
+        <div class="hc-badge"><img src="../../assets/logo/emetco-mark-color.png" alt="" width="28" height="25">Oil &amp; gas · Power · Petrochemicals</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANDS -->
+  <section class="brands-sec" id="brands" aria-label="Brands we supply">
+    <p class="lbl rv">Brands we supply</p>
+    <div class="brands">
+      <div class="track">
+        <span>ABB</span><span>Siemens</span><span>Emerson</span><span>Fisher</span><span>Rosemount</span><span>Endress+Hauser</span><span>Schneider Electric</span><span>Allen-Bradley</span><span>Honeywell</span><span>GE</span><span>Eaton CEAG</span><span>Flowserve</span><span>KSB</span><span>Crane</span><span>Grundfos</span><span>Goulds</span><span>Milton Roy</span><span>Rotork</span><span>Biffi</span><span>Bettis</span><span>Spirax Sarco</span><span>Masoneilan</span><span>Velan</span><span>Keystone</span><span>Asahi</span><span>Swissfluid</span><span>Richter</span><span>Vogt</span><span>Böhmer</span>
+        <span aria-hidden="true">ABB</span><span aria-hidden="true">Siemens</span><span aria-hidden="true">Emerson</span><span aria-hidden="true">Fisher</span><span aria-hidden="true">Rosemount</span><span aria-hidden="true">Endress+Hauser</span><span aria-hidden="true">Schneider Electric</span><span aria-hidden="true">Allen-Bradley</span><span aria-hidden="true">Honeywell</span><span aria-hidden="true">GE</span><span aria-hidden="true">Eaton CEAG</span><span aria-hidden="true">Flowserve</span><span aria-hidden="true">KSB</span><span aria-hidden="true">Crane</span><span aria-hidden="true">Grundfos</span><span aria-hidden="true">Goulds</span><span aria-hidden="true">Milton Roy</span><span aria-hidden="true">Rotork</span><span aria-hidden="true">Biffi</span><span aria-hidden="true">Bettis</span><span aria-hidden="true">Spirax Sarco</span><span aria-hidden="true">Masoneilan</span><span aria-hidden="true">Velan</span><span aria-hidden="true">Keystone</span><span aria-hidden="true">Asahi</span><span aria-hidden="true">Swissfluid</span><span aria-hidden="true">Richter</span><span aria-hidden="true">Vogt</span><span aria-hidden="true">Böhmer</span>
+      </div>
+    </div>
+    <p class="brand-note wrap">Brand names are trademarks of their owners and are shown as text only.</p>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="sec" id="products">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">Products</span>
+        <h2>Eight product lines. One supplier.</h2>
+        <p>From a single gauge to a full valve package, built to international standards.</p>
+      </div>
+      <div class="pgrid">
+        <a href="#quote" class="pcard rv">
+          <div class="pic"><img src="../../assets/products/valves/valves-p04-080.jpg" alt="Stainless steel check valve" loading="lazy" width="231" height="219"></div>
+          <h3>Valves &amp; Actuators</h3><p>Gate, globe, check, ball, butterfly and control valves. Pneumatic and electric actuators.</p>
+          <span class="link">Get a quote <span class="arr">→</span></span>
+        </a>
+        <a href="#quote" class="pcard rv">
+          <div class="pic"><img src="../../assets/products/pumps/pumps-p07-203.jpg" alt="Multistage centrifugal pump" loading="lazy" width="397" height="189"></div>
+          <h3>Pumps &amp; Motors</h3><p>Centrifugal, submersible, dosing, diaphragm and boiler feed pumps. AC, DC and special motors.</p>
+          <span class="link">Get a quote <span class="arr">→</span></span>
+        </a>
+        <a href="#quote" class="pcard rv">
+          <div class="pic"><img src="../../assets/products/instrumentation/instrumentation-p08-215.jpg" alt="Flow meters" loading="lazy" width="324" height="216"></div>
+          <h3>Instrumentation &amp; Analytical</h3><p>Flowmeters, pressure meters, temperature transmitters and calibration devices.</p>
+          <span class="link">Get a quote <span class="arr">→</span></span>
+        </a>
+        <a href="#quote" class="pcard rv">
+          <div class="pic"><img src="../../assets/products/automation-control/automation-control-p09-245.jpg" alt="PLC controller" loading="lazy" width="247" height="202"></div>
+          <h3>Automation &amp; Control</h3><p>PLC, DCS and SCADA cards, drives, soft starters and turbine spare parts.</p>
+          <span class="link">Get a quote <span class="arr">→</span></span>
+        </a>
+        <a href="#quote" class="pcard rv">
+          <div class="pic"><img src="../../assets/products/cables/cables-p13-285.jpg" alt="Armored power cables" loading="lazy" width="246" height="250"></div>
+          <h3>Cables</h3><p>Control, instrument and fire alarm cables. Marine, high-temperature and chemical-resistant.</p>
+          <span class="link">Get a quote <span class="arr">→</span></span>
+        </a>
+        <a href="#quote" class="pcard rv">
+          <div class="pic"><img src="../../assets/products/explosion-proof/explosion-proof-p14-315.jpg" alt="Explosion-proof socket and plug" loading="lazy" width="496" height="357"></div>
+          <h3>Explosion-Proof &amp; Safety</h3><p>ATEX lighting and control panels, fire alarm and fire fighting systems.</p>
+          <span class="link">Get a quote <span class="arr">→</span></span>
+        </a>
+        <a href="#quote" class="pcard rv">
+          <div class="pic"><img src="../../assets/products/burner-ignition/burner-ignition-p12-281.jpg" alt="Burner igniters and flame scanner" loading="lazy" width="386" height="351"></div>
+          <h3>Burner Ignition &amp; Flame</h3><p>US-made igniters, flame scanners, oil and gas guns, OEM replacement parts.</p>
+          <span class="link">Get a quote <span class="arr">→</span></span>
+        </a>
+        <a href="#quote" class="pcard rv">
+          <div class="pic"><img src="../../assets/products/tank-fittings-relief-valves/tank-fittings-relief-valves-p16-344.jpg" alt="Pressure and vacuum relief valve" loading="lazy" width="318" height="311"></div>
+          <h3>Tank Fittings &amp; Protection</h3><p>Relief valves, flame arresters, level gauges and cathodic protection.</p>
+          <span class="link">Get a quote <span class="arr">→</span></span>
+        </a>
+      </div>
+      <p class="pmore rv">Need something not listed? We also supply pipes, fittings, expansion joints, ventilation and water treatment materials. <a href="#quote" class="link">Ask us <span class="arr">→</span></a></p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="sec" id="how" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">How it works</span>
+        <h2>From request to supply in three steps.</h2>
+      </div>
+      <div class="steps">
+        <div class="step rv">
+          <div class="num">1</div>
+          <h3>Send your request</h3>
+          <p>Use the form, WhatsApp or email. Share whatever you have.</p>
+          <div class="eg"><span>Part number</span><span>Brand &amp; model</span><span>Nameplate photo</span><span>Datasheet</span></div>
+        </div>
+        <div class="step rv">
+          <div class="num">2</div>
+          <h3>We source and quote</h3>
+          <p>Our engineers match your need to the right product from our network of international partners, and send you a quote.</p>
+        </div>
+        <div class="step rv">
+          <div class="num">3</div>
+          <h3>Supply and support</h3>
+          <p>Once you confirm, we supply the order. Our local team stays with you for questions and follow-up.</p>
+        </div>
+      </div>
+      <div class="steps-cta rv">
+        <a href="#quote" class="btn btn-red">Start a request</a>
+        <a href="https://wa.me/201099654547" class="btn btn-ghost" target="_blank" rel="noopener"><svg class="wa-i"><use href="#i-wa"/></svg>Send on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPOTLIGHT -->
+  <section aria-label="Valves spotlight">
+    <div class="wrap">
+      <div class="spot rv">
+        <div>
+          <span class="eyebrow">In focus · Valves</span>
+          <h2>Every valve type. Matched to your line.</h2>
+          <p>Tell us the service, size and rating. We source the right valve, actuator and accessories from brands you already trust.</p>
+          <div class="chips">
+            <span class="chip">Gate</span><span class="chip">Globe</span><span class="chip">Check</span><span class="chip">Butterfly</span>
+            <span class="chip">Ball</span><span class="chip">Plug</span><span class="chip">Knife gate</span><span class="chip">Control</span>
+            <span class="chip t">Positioners</span><span class="chip t">Limit switches</span><span class="chip t">Solenoid valves</span>
+          </div>
+          <div class="ctas">
+            <a href="#quote" class="btn btn-ghost">Ask about a valve</a>
+            <a href="#products" class="link">All products <span class="arr">→</span></a>
+          </div>
+        </div>
+        <div class="vgrid">
+          <div class="vtile"><img src="../../assets/products/valves/valves-p06-152.jpg" alt="Cutaway plug valve" loading="lazy" width="214" height="208"><small>Plug</small></div>
+          <div class="vtile"><img src="../../assets/products/valves/valves-p05-108.jpg" alt="Control valve" loading="lazy" width="264" height="285"><small>Control</small></div>
+          <div class="vtile"><img src="../../assets/products/valves/valves-p06-155.jpg" alt="Y-strainer" loading="lazy" width="227" height="222"><small>Strainer</small></div>
+          <div class="vtile"><img src="../../assets/products/valves/valves-p04-083.jpg" alt="Swing check valve" loading="lazy" width="210" height="177"><small>Check</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY EMETCO -->
+  <section class="sec" id="why">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">Why Emetco</span>
+        <h2>A supplier that speaks engineering.</h2>
+      </div>
+      <div class="why">
+        <div class="wcard rv"><div class="ic"><svg class="i"><use href="#i-gear"/></svg></div><h3>Run by engineers</h3><p>Founded by engineers with 25 years in electrical, mechanical and control equipment.</p></div>
+        <div class="wcard rv"><div class="ic"><svg class="i"><use href="#i-globe"/></svg></div><h3>International brands</h3><p>A wide network of trusted international partners, to international standards.</p></div>
+        <div class="wcard rv"><div class="ic"><svg class="i"><use href="#i-box"/></svg></div><h3>One supplier, many lines</h3><p>Valves to cables, pumps to PLC cards. Fewer suppliers to manage.</p></div>
+        <div class="wcard rv"><div class="ic"><svg class="i"><use href="#i-tag"/></svg></div><h3>Cost-effective</h3><p>We look for the best-value option, backed by an experienced local team.</p></div>
+      </div>
+      <div class="facts-grid">
+        <div class="fact rv"><b>100<sup>%</sup></b><span>Egyptian company</span></div>
+        <div class="fact rv"><b>25<sup>+</sup></b><span>Years of engineering experience</span></div>
+        <div class="fact rv"><b>40<sup>+</sup></b><span>International brands supplied</span></div>
+        <div class="fact rv"><b>8</b><span>Industries served</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MID CTA BAND -->
+  <section aria-label="Quick quote">
+    <div class="wrap">
+      <div class="band rv">
+        <div>
+          <h2>Have a part number or a nameplate photo?</h2>
+          <p>Send it to us. That is all we need to start your quote.</p>
+        </div>
+        <div class="ctas">
+          <a href="#quote" class="btn btn-red">Request a Quote</a>
+          <a href="https://wa.me/201099654547" class="btn btn-ghost" target="_blank" rel="noopener"><svg class="wa-i"><use href="#i-wa"/></svg>WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="sec" id="industries">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">Industries</span>
+        <h2>Where our equipment works.</h2>
+        <p>Supply for the plants that keep the region running.</p>
+      </div>
+      <div class="igrid">
+        <article class="icard rv"><div class="ph"><img src="../../assets/photos/refinery-waterfront.jpg" alt="Refinery on the waterfront" loading="lazy" width="1024" height="683"></div><div class="cap"><h3>Oil &amp; Gas</h3></div></article>
+        <article class="icard rv"><div class="ph"><img src="../../assets/photos/chemical-plant-tanks.jpg" alt="Chemical plant with storage tanks" loading="lazy" width="960" height="619"></div><div class="cap"><h3>Petrochemicals</h3></div></article>
+        <article class="icard rv"><div class="ph"><img src="../../assets/photos/cooling-towers-blue.jpg" alt="Power station cooling towers" loading="lazy" width="1024" height="768"></div><div class="cap"><h3>Power Generation</h3></div></article>
+        <article class="icard rv"><div class="ph"><img src="../../assets/photos/offshore-platform.jpg" alt="Offshore platform at sea" loading="lazy" width="1300" height="864"></div><div class="cap"><h3>Marine &amp; Offshore</h3></div></article>
+        <article class="icard rv"><div class="ph"><img src="../../assets/photos/substation.jpg" alt="Electrical substation" loading="lazy" width="1024" height="683"></div><div class="cap"><h3>Utilities</h3></div></article>
+        <article class="icard rv"><div class="ph"><img src="../../assets/photos/factory-hall.jpg" alt="Factory hall" loading="lazy" width="1024" height="610"></div><div class="cap"><h3>Manufacturing</h3></div></article>
+      </div>
+      <div class="also rv">Also serving
+        <div class="chips"><span class="chip">Water &amp; wastewater</span><span class="chip">Food industry</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="sec" id="about" style="padding-top:0">
+    <div class="wrap about">
+      <div class="ph rv"><img src="../../assets/photos/storage-tanks-white.jpg" alt="White storage tanks under a clear sky" loading="lazy" width="960" height="640"></div>
+      <div class="rv">
+        <span class="eyebrow">About Emetco</span>
+        <h2>Founded by engineers. Built on 25 years of experience.</h2>
+        <p>Emetco is a 100% Egyptian company in electrical and mechanical control systems, instrumentation and process. We deliver cost-effective solutions through a wide network of trusted international partners, backed by an experienced local team.</p>
+        <div class="vision">
+          <small>Our vision</small>
+          <p>To be the best provider of electromechanical and electrical supply and maintenance services.</p>
+        </div>
+        <div class="mv">
+          <div><small>Mission <span class="ph-tag">PLACEHOLDER</span></small><p>Mission statement to confirm with client.</p></div>
+          <div><small>Values <span class="ph-tag">PLACEHOLDER</span></small><p>Company values to confirm with client.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF (placeholders) -->
+  <section class="sec" id="clients" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">Clients</span>
+        <h2>What our clients say.</h2>
+        <p>Real client names and quotes will go here once the client approves them.</p>
+      </div>
+      <div class="proof">
+        <figure class="quote-card rv">
+          <div>
+            <span class="ph-tag">PLACEHOLDER TESTIMONIAL</span>
+            <blockquote>“A short quote from a real client about working with Emetco will go here, approved by the client before launch.”</blockquote>
+          </div>
+          <figcaption class="who"><span class="av" aria-hidden="true"></span><span><b>Client name</b><span>Position, Company</span></span></figcaption>
+        </figure>
+        <div class="logos rv">
+          <h3>Client logos <span class="ph-tag">PLACEHOLDER</span></h3>
+          <p>Six slots for client or project logos, with the client's permission.</p>
+          <div class="lgrid"><div>Client logo</div><div>Client logo</div><div>Client logo</div><div>Client logo</div><div>Client logo</div><div>Client logo</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec" id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">FAQ</span>
+        <h2>Quick answers.</h2>
+      </div>
+      <div class="faq rv">
+        <details open><summary>What products do you supply?<span class="pl" aria-hidden="true"></span></summary>
+          <p>Valves and actuators, pumps and motors, instrumentation, automation and control (PLC, DCS, SCADA), cables, explosion-proof and safety equipment, burner ignition systems, tank fittings, relief valves and cathodic protection. We also supply pipes, fittings and expansion joints.</p></details>
+        <details><summary>Which brands can you supply?<span class="pl" aria-hidden="true"></span></summary>
+          <p>Brands we supply include ABB, Siemens, Emerson (Fisher, Rosemount), Endress+Hauser, Schneider Electric, Honeywell, GE, Eaton CEAG, Flowserve, KSB, Grundfos, Rotork and many more.</p></details>
+        <details><summary>How do I request a quote?<span class="pl" aria-hidden="true"></span></summary>
+          <p>Fill the <a href="#quote">quote form</a>, send a WhatsApp message to +20 10 9965 4547, or email info@emetcoeg.com. A part number, brand and model, or a photo of the nameplate is enough to start.</p></details>
+        <details><summary>Can you find spare and replacement parts?<span class="pl" aria-hidden="true"></span></summary>
+          <p>Yes. We supply OEM replacement parts for burner and flame systems, and PLC, DCS and SCADA control cards and turbine spare parts from brands such as ABB, Siemens, GE, Honeywell and Emerson. Send the part number and we will check it for you.</p></details>
+        <details><summary>Which industries do you work with?<span class="pl" aria-hidden="true"></span></summary>
+          <p>Oil and gas, petrochemicals, power generation, water and wastewater, utilities, manufacturing, marine and offshore, and the food industry.</p></details>
+        <details><summary>Where are you located?<span class="pl" aria-hidden="true"></span></summary>
+          <p>Our office is at 30 Street 270, New Maadi, Cairo, Egypt.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT: details + form -->
+  <section id="contact" class="contact-sec" aria-label="Contact and request a quote">
+    <img class="mark" src="../../assets/logo/emetco-mark-white.png" alt="" aria-hidden="true" loading="lazy">
+    <div class="wrap">
+      <div class="contact">
+        <div class="rv">
+          <span class="eyebrow">Contact</span>
+          <h2>Let's talk about your next order.</h2>
+          <p class="lead">Fill the form, call us, or send a message on WhatsApp. Our engineers will get back to you.</p>
+          <ul class="clist">
+            <li><a href="https://wa.me/201099654547" target="_blank" rel="noopener"><span class="ci wa"><svg class="wa-i"><use href="#i-wa"/></svg></span><span><small>Mobile &amp; WhatsApp</small><b>+20 10 9965 4547</b></span></a></li>
+            <li><a href="tel:+20227049740"><span class="ci"><svg class="i"><use href="#i-phone"/></svg></span><span><small>Tel / Fax</small><b>+20 2 2704 9740</b></span></a></li>
+            <li><a href="mailto:info@emetcoeg.com"><span class="ci"><svg class="i"><use href="#i-mail"/></svg></span><span><small>Email</small><b>info@emetcoeg.com</b></span></a></li>
+            <li><div class="row"><span class="ci"><svg class="i"><use href="#i-pin"/></svg></span><span><small>Office</small><b>30 Street 270, New Maadi, Cairo, Egypt</b></span></div></li>
+          </ul>
+        </div>
+        <form class="form js-form rv" id="quote" novalidate>
+          <h3>Request a Quote</h3>
+          <p class="sub">Tell us what you need. Fields with <span style="color:var(--red)">*</span> are required.</p>
+          <div class="fg">
+            <div class="f"><label for="q-n">Full name <span>*</span></label><input id="q-n" name="name" autocomplete="name" required></div>
+            <div class="f"><label for="q-c">Company</label><input id="q-c" name="company" autocomplete="organization"></div>
+            <div class="f"><label for="q-p">Phone / WhatsApp <span>*</span></label><input id="q-p" name="phone" type="tel" autocomplete="tel" required></div>
+            <div class="f"><label for="q-e">Email</label><input id="q-e" name="email" type="email" autocomplete="email"></div>
+            <div class="f full"><label for="q-cat">Product line</label>
+              <select id="q-cat" name="category">
+                <option>Choose a product line</option>
+                <option>Valves &amp; Actuators</option><option>Pumps &amp; Motors</option><option>Instrumentation &amp; Analytical</option><option>Automation &amp; Control</option><option>Cables</option><option>Explosion-Proof &amp; Safety</option><option>Burner Ignition &amp; Flame</option><option>Tank Fittings &amp; Protection</option><option>Other / not sure</option>
+              </select></div>
+            <div class="f full"><label for="q-m">What do you need? <span>*</span></label><textarea id="q-m" name="message" placeholder="Item, brand, model number, size, quantity…" required></textarea></div>
+          </div>
+          <div class="ffoot">
+            <button class="btn btn-red" type="submit">Send my request</button>
+            <small>Prefer to talk? <a href="tel:+201099654547">+20 10 9965 4547</a></small>
+          </div>
+          <p class="form-ok" role="status">Thank you. This is a design preview, so nothing was sent.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a href="#top" class="flogo" aria-label="Emetco home"><img src="../../assets/logo/emetco-logo-white.png" alt="Emetco — Engineering Technology" width="173" height="44" loading="lazy"></a>
+        <p class="ftag">Electromechanical Engineering &amp; Trading Co. A 100% Egyptian company supplying industry, oil &amp; gas, petrochemicals and power.</p>
+        <p class="ar" lang="ar" dir="rtl">إيمتكو — الكهروميكانيكية للهندسة والتجارة</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="#about">About</a></li><li><a href="#products">Products</a></li><li><a href="#industries">Industries</a></li><li><a href="#brands">Brands</a></li><li><a href="#faq">FAQ</a></li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+201099654547">+20 10 9965 4547</a></li>
+          <li><a href="tel:+20227049740">+20 2 2704 9740</a></li>
+          <li><a href="mailto:info@emetcoeg.com">info@emetcoeg.com</a></li>
+          <li>30 Street 270, New Maadi,<br>Cairo, Egypt</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Find us</h4>
+        <div class="cmap" role="img" aria-label="Map placeholder for 30 Street 270, New Maadi, Cairo">
+          <span class="pin"></span>
+          <div class="lbl"><b>New Maadi, Cairo</b> · Map placeholder</div>
+        </div>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 Emetco. All rights reserved.</span>
+      <span>Commercial register 116897 · Tax card 555-381-137</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating contact buttons -->
+<div class="floats" id="floats">
+  <a class="fb fb-call" href="tel:+201099654547" aria-label="Call Emetco: +20 10 9965 4547"><svg class="i"><use href="#i-phone"/></svg></a>
+  <a class="fb fb-wa" href="https://wa.me/201099654547" target="_blank" rel="noopener" aria-label="Chat with Emetco on WhatsApp"><svg class="wa-i"><use href="#i-wa"/></svg></a>
+</div>
+
+<!-- Review switcher: for client review only, not part of the design -->
+<div class="review" role="group" aria-label="Review: hero options (not part of the design)">
+  <button class="rv-t" type="button" aria-expanded="false" aria-controls="rv-o" aria-label="Show hero options" title="Hero options (review only)">A</button>
+  <div class="rv-o" id="rv-o" hidden><button type="button" data-v="a" aria-label="Hero A">A</button><button type="button" data-v="b" aria-label="Hero B">B</button><button type="button" data-v="c" aria-label="Hero C">C</button></div>
+</div>
+
+<script>
+(function(){
+  var d=document.documentElement, b=document.body;
+  /* header border */
+  var hdr=document.querySelector('.hdr');
+  /* menu */
+  var mb=document.querySelector('.menu-btn');
+  mb.addEventListener('click',function(){var o=b.classList.toggle('menu-open');mb.setAttribute('aria-expanded',o);mb.setAttribute('aria-label',o?'Close menu':'Open menu')});
+  document.querySelectorAll('.mnav a').forEach(function(a){a.addEventListener('click',function(){b.classList.remove('menu-open');mb.setAttribute('aria-expanded','false')})});
+
+  /* forms (preview only) */
+  document.querySelectorAll('.js-form').forEach(function(f){f.addEventListener('submit',function(e){
+    e.preventDefault(); var first=null;
+    f.querySelectorAll('[required]').forEach(function(i){
+      var bad=!i.value.trim(), m=document.getElementById(i.id+'-err');
+      i.setAttribute('aria-invalid',bad);
+      if(bad){ if(!m){m=document.createElement('small');m.className='err';m.id=i.id+'-err';m.textContent='Please fill this in.';i.parentNode.appendChild(m);i.setAttribute('aria-describedby',m.id)} first=first||i }
+      else if(m){m.remove();i.removeAttribute('aria-describedby')}
+    });
+    var ok=f.querySelector('.form-ok');
+    if(first){ok.classList.remove('show');first.focus();return}
+    ok.classList.add('show');
+  })});
+
+  /* review switcher (hero only): tiny toggle, options show on click */
+  var rvBox=document.querySelector('.review'), rvT=rvBox.querySelector('.rv-t'), rvO=document.getElementById('rv-o'), sw=rvO.querySelectorAll('button');
+  function syncSw(){var h=d.getAttribute('data-hero');rvT.textContent=h.toUpperCase();sw.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.v===h)})}
+  function setOpen(o){rvO.hidden=!o;rvBox.classList.toggle('open',o);rvT.setAttribute('aria-expanded',o);rvT.setAttribute('aria-label',o?'Hide hero options':'Show hero options')}
+  rvT.addEventListener('click',function(){setOpen(rvO.hidden)});
+  sw.forEach(function(x){x.addEventListener('click',function(){
+    d.setAttribute('data-hero',x.dataset.v);
+    var q=new URLSearchParams(location.search); q.set('hero',x.dataset.v); q.delete('float');
+    history.replaceState(null,'',location.pathname+'?'+q.toString()+location.hash);
+    window.scrollTo({top:0}); syncSw(); setOpen(false); check();
+  })});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setOpen(false)});
+  syncSw();
+
+  /* floating buttons never cover a button or a form field: hide them while one is underneath */
+  var fl=document.getElementById('floats'), rv=document.querySelector('.review');
+  var avoid=Array.prototype.slice.call(document.querySelectorAll('main .btn, main input, main select, main textarea, footer .btn'));
+  var ticking=false;
+  function check(){
+    ticking=false;
+    hdr.classList.toggle('scrolled',window.scrollY>8);
+    [fl,rv].forEach(function(box){
+      box.classList.remove('away');
+      var r=box.getBoundingClientRect(), pad=10, hit=false;
+      for(var i=0;i<avoid.length&&!hit;i++){
+        var e=avoid[i]; if(!e.offsetParent) continue;
+        var a=e.getBoundingClientRect();
+        if(a.right>r.left-pad&&a.left<r.right+pad&&a.bottom>r.top-pad&&a.top<r.bottom+pad) hit=true;
+      }
+      box.classList.toggle('away',hit);
+    });
+  }
+  function req(){if(!ticking){ticking=true;requestAnimationFrame(check)}}
+  window.addEventListener('scroll',req,{passive:true}); window.addEventListener('resize',req); check();
+  window.__floatCheck=check;
+
+  /* reveal on scroll */
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
